@@ -1,0 +1,91 @@
+syntax = "proto3";
+
+package nightswatch.server;
+
+import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
+option go_package = "github.com/nightswatchprotobufs/gogenproto/nightswatch";
+
+service NightsWatchService {
+  // Service methods will be defined here
+  rpc Register(RegisterRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post: "/v1/register"
+      body: "*"
+    };
+  }
+  rpc Login(LoginRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post: "/v1/login"
+      body: "*"
+    };
+  }
+  rpc SendDeviceData(DeviceDataRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      post: "/v1/device/data"
+      body: "*"
+    };
+  }
+  rpc LatestData(LatestDataRequest) returns (LatestDataResponse) {
+    option (google.api.http) = {
+      get: "/v1/device/data/{user_id}"
+    };
+  }
+}
+
+// Message definitions will be added here
+message RegisterRequest {
+  string name = 1;
+  string email = 2;
+  string password = 3;
+}
+
+// LoginRequest is the request for the Login method
+message LoginRequest {
+  string name = 1;
+  string email = 2;
+  string password = 3;
+}
+
+enum DeviceDataType {
+  UNKNOWN = 0;
+  INSTALLED_APPS = 1;
+  OS_VERSION = 2;
+  OSQUERY_VERSION = 3;
+}
+
+message InstalledApps{
+  message App{
+    string name = 1;
+    string version = 2;
+  }
+  repeated App apps = 1;
+}
+
+message OSVersion{
+  string version = 1;
+}
+
+message OSQueryVersion{
+  string version = 1;
+}
+
+// DeviceDataRequest is the request for the SendDeviceData method
+message DeviceDataRequest {
+  DeviceDataType data_request_type = 1;
+  InstalledApps installed_apps = 2;
+  OSVersion os_version = 3;
+  OSQueryVersion osquery_version = 4;
+}
+
+// LatestDataRequest is the request for the LatestData method
+message LatestDataRequest {
+  string user_id = 1;
+  repeated DeviceDataType data_request_types = 2;
+}
+
+message LatestDataResponse {
+  InstalledApps installed_apps = 1;
+  OSVersion os_version = 2;
+  OSQueryVersion osquery_version = 3;
+}
