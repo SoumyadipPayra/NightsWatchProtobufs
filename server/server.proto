@@ -1,10 +1,10 @@
 syntax = "proto3";
 
-package nightswatch.server;
+package server;
 
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
-option go_package = "github.com/nightswatchprotobufs/gogenproto/nightswatch";
+option go_package = "github.com/nightswatchprotobufs/gogenproto/server";
 
 service NightsWatchService {
   // Service methods will be defined here

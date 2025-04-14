@@ -2,11 +2,11 @@
 // source: server/server.proto
 
 /*
-Package nightswatch is a reverse proxy.
+Package server is a reverse proxy.
 
 It translates gRPC into RESTful JSON APIs.
 */
-package nightswatch
+package server
 
 import (
 	"context"
@@ -170,7 +170,7 @@ func RegisterNightsWatchServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/nightswatch.server.NightsWatchService/Register", runtime.WithHTTPPathPattern("/v1/register"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/server.NightsWatchService/Register", runtime.WithHTTPPathPattern("/v1/register"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -190,7 +190,7 @@ func RegisterNightsWatchServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/nightswatch.server.NightsWatchService/Login", runtime.WithHTTPPathPattern("/v1/login"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/server.NightsWatchService/Login", runtime.WithHTTPPathPattern("/v1/login"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -210,7 +210,7 @@ func RegisterNightsWatchServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/nightswatch.server.NightsWatchService/SendDeviceData", runtime.WithHTTPPathPattern("/v1/device/data"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/server.NightsWatchService/SendDeviceData", runtime.WithHTTPPathPattern("/v1/device/data"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -230,7 +230,7 @@ func RegisterNightsWatchServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/nightswatch.server.NightsWatchService/LatestData", runtime.WithHTTPPathPattern("/v1/device/data/{user_id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/server.NightsWatchService/LatestData", runtime.WithHTTPPathPattern("/v1/device/data/{user_id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -288,7 +288,7 @@ func RegisterNightsWatchServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/nightswatch.server.NightsWatchService/Register", runtime.WithHTTPPathPattern("/v1/register"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/server.NightsWatchService/Register", runtime.WithHTTPPathPattern("/v1/register"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -305,7 +305,7 @@ func RegisterNightsWatchServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/nightswatch.server.NightsWatchService/Login", runtime.WithHTTPPathPattern("/v1/login"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/server.NightsWatchService/Login", runtime.WithHTTPPathPattern("/v1/login"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -322,7 +322,7 @@ func RegisterNightsWatchServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/nightswatch.server.NightsWatchService/SendDeviceData", runtime.WithHTTPPathPattern("/v1/device/data"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/server.NightsWatchService/SendDeviceData", runtime.WithHTTPPathPattern("/v1/device/data"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -339,7 +339,7 @@ func RegisterNightsWatchServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/nightswatch.server.NightsWatchService/LatestData", runtime.WithHTTPPathPattern("/v1/device/data/{user_id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/server.NightsWatchService/LatestData", runtime.WithHTTPPathPattern("/v1/device/data/{user_id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return

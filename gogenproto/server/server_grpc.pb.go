@@ -4,7 +4,7 @@
 // - protoc             v5.29.3
 // source: server/server.proto
 
-package nightswatch
+package server
 
 import (
 	context "context"
@@ -20,10 +20,10 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	NightsWatchService_Register_FullMethodName       = "/nightswatch.server.NightsWatchService/Register"
-	NightsWatchService_Login_FullMethodName          = "/nightswatch.server.NightsWatchService/Login"
-	NightsWatchService_SendDeviceData_FullMethodName = "/nightswatch.server.NightsWatchService/SendDeviceData"
-	NightsWatchService_LatestData_FullMethodName     = "/nightswatch.server.NightsWatchService/LatestData"
+	NightsWatchService_Register_FullMethodName       = "/server.NightsWatchService/Register"
+	NightsWatchService_Login_FullMethodName          = "/server.NightsWatchService/Login"
+	NightsWatchService_SendDeviceData_FullMethodName = "/server.NightsWatchService/SendDeviceData"
+	NightsWatchService_LatestData_FullMethodName     = "/server.NightsWatchService/LatestData"
 )
 
 // NightsWatchServiceClient is the client API for NightsWatchService service.
@@ -213,7 +213,7 @@ func _NightsWatchService_LatestData_Handler(srv interface{}, ctx context.Context
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var NightsWatchService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "nightswatch.server.NightsWatchService",
+	ServiceName: "server.NightsWatchService",
 	HandlerType: (*NightsWatchServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
