@@ -1,4 +1,4 @@
-module github.com/nightswatchprotobufs
+module github.com/SoumyadipPayra/NightsWatchProtobufs
 
 go 1.24.1
 
