@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v5.29.3
-// source: server/server.proto
+// source: protos/server/server.proto
 
 package server
 
@@ -59,11 +59,11 @@ func (x DeviceDataType) String() string {
 }
 
 func (DeviceDataType) Descriptor() protoreflect.EnumDescriptor {
-	return file_server_server_proto_enumTypes[0].Descriptor()
+	return file_protos_server_server_proto_enumTypes[0].Descriptor()
 }
 
 func (DeviceDataType) Type() protoreflect.EnumType {
-	return &file_server_server_proto_enumTypes[0]
+	return &file_protos_server_server_proto_enumTypes[0]
 }
 
 func (x DeviceDataType) Number() protoreflect.EnumNumber {
@@ -72,7 +72,7 @@ func (x DeviceDataType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use DeviceDataType.Descriptor instead.
 func (DeviceDataType) EnumDescriptor() ([]byte, []int) {
-	return file_server_server_proto_rawDescGZIP(), []int{0}
+	return file_protos_server_server_proto_rawDescGZIP(), []int{0}
 }
 
 // Message definitions will be added here
@@ -87,7 +87,7 @@ type RegisterRequest struct {
 
 func (x *RegisterRequest) Reset() {
 	*x = RegisterRequest{}
-	mi := &file_server_server_proto_msgTypes[0]
+	mi := &file_protos_server_server_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -99,7 +99,7 @@ func (x *RegisterRequest) String() string {
 func (*RegisterRequest) ProtoMessage() {}
 
 func (x *RegisterRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_server_server_proto_msgTypes[0]
+	mi := &file_protos_server_server_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -112,7 +112,7 @@ func (x *RegisterRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterRequest.ProtoReflect.Descriptor instead.
 func (*RegisterRequest) Descriptor() ([]byte, []int) {
-	return file_server_server_proto_rawDescGZIP(), []int{0}
+	return file_protos_server_server_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *RegisterRequest) GetName() string {
@@ -148,7 +148,7 @@ type LoginRequest struct {
 
 func (x *LoginRequest) Reset() {
 	*x = LoginRequest{}
-	mi := &file_server_server_proto_msgTypes[1]
+	mi := &file_protos_server_server_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -160,7 +160,7 @@ func (x *LoginRequest) String() string {
 func (*LoginRequest) ProtoMessage() {}
 
 func (x *LoginRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_server_server_proto_msgTypes[1]
+	mi := &file_protos_server_server_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -173,7 +173,7 @@ func (x *LoginRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoginRequest.ProtoReflect.Descriptor instead.
 func (*LoginRequest) Descriptor() ([]byte, []int) {
-	return file_server_server_proto_rawDescGZIP(), []int{1}
+	return file_protos_server_server_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *LoginRequest) GetName() string {
@@ -206,7 +206,7 @@ type InstalledApps struct {
 
 func (x *InstalledApps) Reset() {
 	*x = InstalledApps{}
-	mi := &file_server_server_proto_msgTypes[2]
+	mi := &file_protos_server_server_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -218,7 +218,7 @@ func (x *InstalledApps) String() string {
 func (*InstalledApps) ProtoMessage() {}
 
 func (x *InstalledApps) ProtoReflect() protoreflect.Message {
-	mi := &file_server_server_proto_msgTypes[2]
+	mi := &file_protos_server_server_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -231,7 +231,7 @@ func (x *InstalledApps) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InstalledApps.ProtoReflect.Descriptor instead.
 func (*InstalledApps) Descriptor() ([]byte, []int) {
-	return file_server_server_proto_rawDescGZIP(), []int{2}
+	return file_protos_server_server_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *InstalledApps) GetApps() []*InstalledApps_App {
@@ -250,7 +250,7 @@ type OSVersion struct {
 
 func (x *OSVersion) Reset() {
 	*x = OSVersion{}
-	mi := &file_server_server_proto_msgTypes[3]
+	mi := &file_protos_server_server_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -262,7 +262,7 @@ func (x *OSVersion) String() string {
 func (*OSVersion) ProtoMessage() {}
 
 func (x *OSVersion) ProtoReflect() protoreflect.Message {
-	mi := &file_server_server_proto_msgTypes[3]
+	mi := &file_protos_server_server_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -275,7 +275,7 @@ func (x *OSVersion) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OSVersion.ProtoReflect.Descriptor instead.
 func (*OSVersion) Descriptor() ([]byte, []int) {
-	return file_server_server_proto_rawDescGZIP(), []int{3}
+	return file_protos_server_server_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *OSVersion) GetVersion() string {
@@ -294,7 +294,7 @@ type OSQueryVersion struct {
 
 func (x *OSQueryVersion) Reset() {
 	*x = OSQueryVersion{}
-	mi := &file_server_server_proto_msgTypes[4]
+	mi := &file_protos_server_server_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -306,7 +306,7 @@ func (x *OSQueryVersion) String() string {
 func (*OSQueryVersion) ProtoMessage() {}
 
 func (x *OSQueryVersion) ProtoReflect() protoreflect.Message {
-	mi := &file_server_server_proto_msgTypes[4]
+	mi := &file_protos_server_server_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -319,7 +319,7 @@ func (x *OSQueryVersion) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OSQueryVersion.ProtoReflect.Descriptor instead.
 func (*OSQueryVersion) Descriptor() ([]byte, []int) {
-	return file_server_server_proto_rawDescGZIP(), []int{4}
+	return file_protos_server_server_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *OSQueryVersion) GetVersion() string {
@@ -342,7 +342,7 @@ type DeviceDataRequest struct {
 
 func (x *DeviceDataRequest) Reset() {
 	*x = DeviceDataRequest{}
-	mi := &file_server_server_proto_msgTypes[5]
+	mi := &file_protos_server_server_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -354,7 +354,7 @@ func (x *DeviceDataRequest) String() string {
 func (*DeviceDataRequest) ProtoMessage() {}
 
 func (x *DeviceDataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_server_server_proto_msgTypes[5]
+	mi := &file_protos_server_server_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -367,7 +367,7 @@ func (x *DeviceDataRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeviceDataRequest.ProtoReflect.Descriptor instead.
 func (*DeviceDataRequest) Descriptor() ([]byte, []int) {
-	return file_server_server_proto_rawDescGZIP(), []int{5}
+	return file_protos_server_server_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *DeviceDataRequest) GetDataRequestType() DeviceDataType {
@@ -409,7 +409,7 @@ type LatestDataRequest struct {
 
 func (x *LatestDataRequest) Reset() {
 	*x = LatestDataRequest{}
-	mi := &file_server_server_proto_msgTypes[6]
+	mi := &file_protos_server_server_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -421,7 +421,7 @@ func (x *LatestDataRequest) String() string {
 func (*LatestDataRequest) ProtoMessage() {}
 
 func (x *LatestDataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_server_server_proto_msgTypes[6]
+	mi := &file_protos_server_server_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -434,7 +434,7 @@ func (x *LatestDataRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LatestDataRequest.ProtoReflect.Descriptor instead.
 func (*LatestDataRequest) Descriptor() ([]byte, []int) {
-	return file_server_server_proto_rawDescGZIP(), []int{6}
+	return file_protos_server_server_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *LatestDataRequest) GetUserId() string {
@@ -462,7 +462,7 @@ type LatestDataResponse struct {
 
 func (x *LatestDataResponse) Reset() {
 	*x = LatestDataResponse{}
-	mi := &file_server_server_proto_msgTypes[7]
+	mi := &file_protos_server_server_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -474,7 +474,7 @@ func (x *LatestDataResponse) String() string {
 func (*LatestDataResponse) ProtoMessage() {}
 
 func (x *LatestDataResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_server_server_proto_msgTypes[7]
+	mi := &file_protos_server_server_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -487,7 +487,7 @@ func (x *LatestDataResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LatestDataResponse.ProtoReflect.Descriptor instead.
 func (*LatestDataResponse) Descriptor() ([]byte, []int) {
-	return file_server_server_proto_rawDescGZIP(), []int{7}
+	return file_protos_server_server_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *LatestDataResponse) GetInstalledApps() *InstalledApps {
@@ -521,7 +521,7 @@ type InstalledApps_App struct {
 
 func (x *InstalledApps_App) Reset() {
 	*x = InstalledApps_App{}
-	mi := &file_server_server_proto_msgTypes[8]
+	mi := &file_protos_server_server_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -533,7 +533,7 @@ func (x *InstalledApps_App) String() string {
 func (*InstalledApps_App) ProtoMessage() {}
 
 func (x *InstalledApps_App) ProtoReflect() protoreflect.Message {
-	mi := &file_server_server_proto_msgTypes[8]
+	mi := &file_protos_server_server_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -546,7 +546,7 @@ func (x *InstalledApps_App) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InstalledApps_App.ProtoReflect.Descriptor instead.
 func (*InstalledApps_App) Descriptor() ([]byte, []int) {
-	return file_server_server_proto_rawDescGZIP(), []int{2, 0}
+	return file_protos_server_server_proto_rawDescGZIP(), []int{2, 0}
 }
 
 func (x *InstalledApps_App) GetName() string {
@@ -563,11 +563,11 @@ func (x *InstalledApps_App) GetVersion() string {
 	return ""
 }
 
-var File_server_server_proto protoreflect.FileDescriptor
+var File_protos_server_server_proto protoreflect.FileDescriptor
 
-const file_server_server_proto_rawDesc = "" +
+const file_protos_server_server_proto_rawDesc = "" +
 	"\n" +
-	"\x13server/server.proto\x12\x06server\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\"W\n" +
+	"\x1aprotos/server/server.proto\x12\x06server\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\"W\n" +
 	"\x0fRegisterRequest\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n" +
 	"\x05email\x18\x02 \x01(\tR\x05email\x12\x1a\n" +
@@ -613,20 +613,20 @@ const file_server_server_proto_rawDesc = "" +
 	"LatestData\x12\x19.server.LatestDataRequest\x1a\x1a.server.LatestDataResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/device/data/{user_id}B3Z1github.com/nightswatchprotobufs/gogenproto/serverb\x06proto3"
 
 var (
-	file_server_server_proto_rawDescOnce sync.Once
-	file_server_server_proto_rawDescData []byte
+	file_protos_server_server_proto_rawDescOnce sync.Once
+	file_protos_server_server_proto_rawDescData []byte
 )
 
-func file_server_server_proto_rawDescGZIP() []byte {
-	file_server_server_proto_rawDescOnce.Do(func() {
-		file_server_server_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_server_server_proto_rawDesc), len(file_server_server_proto_rawDesc)))
+func file_protos_server_server_proto_rawDescGZIP() []byte {
+	file_protos_server_server_proto_rawDescOnce.Do(func() {
+		file_protos_server_server_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_protos_server_server_proto_rawDesc), len(file_protos_server_server_proto_rawDesc)))
 	})
-	return file_server_server_proto_rawDescData
+	return file_protos_server_server_proto_rawDescData
 }
 
-var file_server_server_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_server_server_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
-var file_server_server_proto_goTypes = []any{
+var file_protos_server_server_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_protos_server_server_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_protos_server_server_proto_goTypes = []any{
 	(DeviceDataType)(0),        // 0: server.DeviceDataType
 	(*RegisterRequest)(nil),    // 1: server.RegisterRequest
 	(*LoginRequest)(nil),       // 2: server.LoginRequest
@@ -639,7 +639,7 @@ var file_server_server_proto_goTypes = []any{
 	(*InstalledApps_App)(nil),  // 9: server.InstalledApps.App
 	(*emptypb.Empty)(nil),      // 10: google.protobuf.Empty
 }
-var file_server_server_proto_depIdxs = []int32{
+var file_protos_server_server_proto_depIdxs = []int32{
 	9,  // 0: server.InstalledApps.apps:type_name -> server.InstalledApps.App
 	0,  // 1: server.DeviceDataRequest.data_request_type:type_name -> server.DeviceDataType
 	3,  // 2: server.DeviceDataRequest.installed_apps:type_name -> server.InstalledApps
@@ -664,27 +664,27 @@ var file_server_server_proto_depIdxs = []int32{
 	0,  // [0:9] is the sub-list for field type_name
 }
 
-func init() { file_server_server_proto_init() }
-func file_server_server_proto_init() {
-	if File_server_server_proto != nil {
+func init() { file_protos_server_server_proto_init() }
+func file_protos_server_server_proto_init() {
+	if File_protos_server_server_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_server_server_proto_rawDesc), len(file_server_server_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_protos_server_server_proto_rawDesc), len(file_protos_server_server_proto_rawDesc)),
 			NumEnums:      1,
 			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_server_server_proto_goTypes,
-		DependencyIndexes: file_server_server_proto_depIdxs,
-		EnumInfos:         file_server_server_proto_enumTypes,
-		MessageInfos:      file_server_server_proto_msgTypes,
+		GoTypes:           file_protos_server_server_proto_goTypes,
+		DependencyIndexes: file_protos_server_server_proto_depIdxs,
+		EnumInfos:         file_protos_server_server_proto_enumTypes,
+		MessageInfos:      file_protos_server_server_proto_msgTypes,
 	}.Build()
-	File_server_server_proto = out.File
-	file_server_server_proto_goTypes = nil
-	file_server_server_proto_depIdxs = nil
+	File_protos_server_server_proto = out.File
+	file_protos_server_server_proto_goTypes = nil
+	file_protos_server_server_proto_depIdxs = nil
 }

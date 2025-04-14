@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.5.1
 // - protoc             v5.29.3
-// source: server/server.proto
+// source: protos/server/server.proto
 
 package server
 
@@ -234,5 +234,5 @@ var NightsWatchService_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "server/server.proto",
+	Metadata: "protos/server/server.proto",
 }
