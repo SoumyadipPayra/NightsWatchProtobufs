@@ -4,7 +4,7 @@ package nightswatch;
 
 import "google/protobuf/empty.proto";
 import "google/api/annotations.proto";
-option go_package = "github.com/nightswatchprotobufs/gogenproto/nightswatch";
+option go_package = "github.com/SoumyadipPayra/NightsWatchProtobufs/gogenproto/nightswatch";
 
 service NightsWatchService {
   // Service methods will be defined here

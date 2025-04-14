@@ -610,7 +610,7 @@ const file_protos_nightswatch_nightswatch_proto_rawDesc = "" +
 	"\x05Login\x12\x19.nightswatch.LoginRequest\x1a\x16.google.protobuf.Empty\"\x14\x82\xd3\xe4\x93\x02\x0e:\x01*\"\t/v1/login\x12d\n" +
 	"\x0eSendDeviceData\x12\x1e.nightswatch.DeviceDataRequest\x1a\x16.google.protobuf.Empty\"\x1a\x82\xd3\xe4\x93\x02\x14:\x01*\"\x0f/v1/device/data\x12p\n" +
 	"\n" +
-	"LatestData\x12\x1e.nightswatch.LatestDataRequest\x1a\x1f.nightswatch.LatestDataResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/device/data/{user_id}B8Z6github.com/nightswatchprotobufs/gogenproto/nightswatchb\x06proto3"
+	"LatestData\x12\x1e.nightswatch.LatestDataRequest\x1a\x1f.nightswatch.LatestDataResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/device/data/{user_id}BGZEgithub.com/SoumyadipPayra/NightsWatchProtobufs/gogenproto/nightswatchb\x06proto3"
 
 var (
 	file_protos_nightswatch_nightswatch_proto_rawDescOnce sync.Once
