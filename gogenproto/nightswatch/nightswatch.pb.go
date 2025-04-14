@@ -2,9 +2,9 @@
 // versions:
 // 	protoc-gen-go v1.36.6
 // 	protoc        v5.29.3
-// source: protos/server/server.proto
+// source: protos/nightswatch/nightswatch.proto
 
-package server
+package nightswatch
 
 import (
 	_ "google.golang.org/genproto/googleapis/api/annotations"
@@ -59,11 +59,11 @@ func (x DeviceDataType) String() string {
 }
 
 func (DeviceDataType) Descriptor() protoreflect.EnumDescriptor {
-	return file_protos_server_server_proto_enumTypes[0].Descriptor()
+	return file_protos_nightswatch_nightswatch_proto_enumTypes[0].Descriptor()
 }
 
 func (DeviceDataType) Type() protoreflect.EnumType {
-	return &file_protos_server_server_proto_enumTypes[0]
+	return &file_protos_nightswatch_nightswatch_proto_enumTypes[0]
 }
 
 func (x DeviceDataType) Number() protoreflect.EnumNumber {
@@ -72,7 +72,7 @@ func (x DeviceDataType) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use DeviceDataType.Descriptor instead.
 func (DeviceDataType) EnumDescriptor() ([]byte, []int) {
-	return file_protos_server_server_proto_rawDescGZIP(), []int{0}
+	return file_protos_nightswatch_nightswatch_proto_rawDescGZIP(), []int{0}
 }
 
 // Message definitions will be added here
@@ -87,7 +87,7 @@ type RegisterRequest struct {
 
 func (x *RegisterRequest) Reset() {
 	*x = RegisterRequest{}
-	mi := &file_protos_server_server_proto_msgTypes[0]
+	mi := &file_protos_nightswatch_nightswatch_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -99,7 +99,7 @@ func (x *RegisterRequest) String() string {
 func (*RegisterRequest) ProtoMessage() {}
 
 func (x *RegisterRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_server_server_proto_msgTypes[0]
+	mi := &file_protos_nightswatch_nightswatch_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -112,7 +112,7 @@ func (x *RegisterRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterRequest.ProtoReflect.Descriptor instead.
 func (*RegisterRequest) Descriptor() ([]byte, []int) {
-	return file_protos_server_server_proto_rawDescGZIP(), []int{0}
+	return file_protos_nightswatch_nightswatch_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *RegisterRequest) GetName() string {
@@ -148,7 +148,7 @@ type LoginRequest struct {
 
 func (x *LoginRequest) Reset() {
 	*x = LoginRequest{}
-	mi := &file_protos_server_server_proto_msgTypes[1]
+	mi := &file_protos_nightswatch_nightswatch_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -160,7 +160,7 @@ func (x *LoginRequest) String() string {
 func (*LoginRequest) ProtoMessage() {}
 
 func (x *LoginRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_server_server_proto_msgTypes[1]
+	mi := &file_protos_nightswatch_nightswatch_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -173,7 +173,7 @@ func (x *LoginRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LoginRequest.ProtoReflect.Descriptor instead.
 func (*LoginRequest) Descriptor() ([]byte, []int) {
-	return file_protos_server_server_proto_rawDescGZIP(), []int{1}
+	return file_protos_nightswatch_nightswatch_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *LoginRequest) GetName() string {
@@ -206,7 +206,7 @@ type InstalledApps struct {
 
 func (x *InstalledApps) Reset() {
 	*x = InstalledApps{}
-	mi := &file_protos_server_server_proto_msgTypes[2]
+	mi := &file_protos_nightswatch_nightswatch_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -218,7 +218,7 @@ func (x *InstalledApps) String() string {
 func (*InstalledApps) ProtoMessage() {}
 
 func (x *InstalledApps) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_server_server_proto_msgTypes[2]
+	mi := &file_protos_nightswatch_nightswatch_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -231,7 +231,7 @@ func (x *InstalledApps) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InstalledApps.ProtoReflect.Descriptor instead.
 func (*InstalledApps) Descriptor() ([]byte, []int) {
-	return file_protos_server_server_proto_rawDescGZIP(), []int{2}
+	return file_protos_nightswatch_nightswatch_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *InstalledApps) GetApps() []*InstalledApps_App {
@@ -250,7 +250,7 @@ type OSVersion struct {
 
 func (x *OSVersion) Reset() {
 	*x = OSVersion{}
-	mi := &file_protos_server_server_proto_msgTypes[3]
+	mi := &file_protos_nightswatch_nightswatch_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -262,7 +262,7 @@ func (x *OSVersion) String() string {
 func (*OSVersion) ProtoMessage() {}
 
 func (x *OSVersion) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_server_server_proto_msgTypes[3]
+	mi := &file_protos_nightswatch_nightswatch_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -275,7 +275,7 @@ func (x *OSVersion) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OSVersion.ProtoReflect.Descriptor instead.
 func (*OSVersion) Descriptor() ([]byte, []int) {
-	return file_protos_server_server_proto_rawDescGZIP(), []int{3}
+	return file_protos_nightswatch_nightswatch_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *OSVersion) GetVersion() string {
@@ -294,7 +294,7 @@ type OSQueryVersion struct {
 
 func (x *OSQueryVersion) Reset() {
 	*x = OSQueryVersion{}
-	mi := &file_protos_server_server_proto_msgTypes[4]
+	mi := &file_protos_nightswatch_nightswatch_proto_msgTypes[4]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -306,7 +306,7 @@ func (x *OSQueryVersion) String() string {
 func (*OSQueryVersion) ProtoMessage() {}
 
 func (x *OSQueryVersion) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_server_server_proto_msgTypes[4]
+	mi := &file_protos_nightswatch_nightswatch_proto_msgTypes[4]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -319,7 +319,7 @@ func (x *OSQueryVersion) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OSQueryVersion.ProtoReflect.Descriptor instead.
 func (*OSQueryVersion) Descriptor() ([]byte, []int) {
-	return file_protos_server_server_proto_rawDescGZIP(), []int{4}
+	return file_protos_nightswatch_nightswatch_proto_rawDescGZIP(), []int{4}
 }
 
 func (x *OSQueryVersion) GetVersion() string {
@@ -332,7 +332,7 @@ func (x *OSQueryVersion) GetVersion() string {
 // DeviceDataRequest is the request for the SendDeviceData method
 type DeviceDataRequest struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
-	DataRequestType DeviceDataType         `protobuf:"varint,1,opt,name=data_request_type,json=dataRequestType,proto3,enum=server.DeviceDataType" json:"data_request_type,omitempty"`
+	DataRequestType DeviceDataType         `protobuf:"varint,1,opt,name=data_request_type,json=dataRequestType,proto3,enum=nightswatch.DeviceDataType" json:"data_request_type,omitempty"`
 	InstalledApps   *InstalledApps         `protobuf:"bytes,2,opt,name=installed_apps,json=installedApps,proto3" json:"installed_apps,omitempty"`
 	OsVersion       *OSVersion             `protobuf:"bytes,3,opt,name=os_version,json=osVersion,proto3" json:"os_version,omitempty"`
 	OsqueryVersion  *OSQueryVersion        `protobuf:"bytes,4,opt,name=osquery_version,json=osqueryVersion,proto3" json:"osquery_version,omitempty"`
@@ -342,7 +342,7 @@ type DeviceDataRequest struct {
 
 func (x *DeviceDataRequest) Reset() {
 	*x = DeviceDataRequest{}
-	mi := &file_protos_server_server_proto_msgTypes[5]
+	mi := &file_protos_nightswatch_nightswatch_proto_msgTypes[5]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -354,7 +354,7 @@ func (x *DeviceDataRequest) String() string {
 func (*DeviceDataRequest) ProtoMessage() {}
 
 func (x *DeviceDataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_server_server_proto_msgTypes[5]
+	mi := &file_protos_nightswatch_nightswatch_proto_msgTypes[5]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -367,7 +367,7 @@ func (x *DeviceDataRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeviceDataRequest.ProtoReflect.Descriptor instead.
 func (*DeviceDataRequest) Descriptor() ([]byte, []int) {
-	return file_protos_server_server_proto_rawDescGZIP(), []int{5}
+	return file_protos_nightswatch_nightswatch_proto_rawDescGZIP(), []int{5}
 }
 
 func (x *DeviceDataRequest) GetDataRequestType() DeviceDataType {
@@ -402,14 +402,14 @@ func (x *DeviceDataRequest) GetOsqueryVersion() *OSQueryVersion {
 type LatestDataRequest struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
 	UserId           string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
-	DataRequestTypes []DeviceDataType       `protobuf:"varint,2,rep,packed,name=data_request_types,json=dataRequestTypes,proto3,enum=server.DeviceDataType" json:"data_request_types,omitempty"`
+	DataRequestTypes []DeviceDataType       `protobuf:"varint,2,rep,packed,name=data_request_types,json=dataRequestTypes,proto3,enum=nightswatch.DeviceDataType" json:"data_request_types,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
 }
 
 func (x *LatestDataRequest) Reset() {
 	*x = LatestDataRequest{}
-	mi := &file_protos_server_server_proto_msgTypes[6]
+	mi := &file_protos_nightswatch_nightswatch_proto_msgTypes[6]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -421,7 +421,7 @@ func (x *LatestDataRequest) String() string {
 func (*LatestDataRequest) ProtoMessage() {}
 
 func (x *LatestDataRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_server_server_proto_msgTypes[6]
+	mi := &file_protos_nightswatch_nightswatch_proto_msgTypes[6]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -434,7 +434,7 @@ func (x *LatestDataRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LatestDataRequest.ProtoReflect.Descriptor instead.
 func (*LatestDataRequest) Descriptor() ([]byte, []int) {
-	return file_protos_server_server_proto_rawDescGZIP(), []int{6}
+	return file_protos_nightswatch_nightswatch_proto_rawDescGZIP(), []int{6}
 }
 
 func (x *LatestDataRequest) GetUserId() string {
@@ -462,7 +462,7 @@ type LatestDataResponse struct {
 
 func (x *LatestDataResponse) Reset() {
 	*x = LatestDataResponse{}
-	mi := &file_protos_server_server_proto_msgTypes[7]
+	mi := &file_protos_nightswatch_nightswatch_proto_msgTypes[7]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -474,7 +474,7 @@ func (x *LatestDataResponse) String() string {
 func (*LatestDataResponse) ProtoMessage() {}
 
 func (x *LatestDataResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_server_server_proto_msgTypes[7]
+	mi := &file_protos_nightswatch_nightswatch_proto_msgTypes[7]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -487,7 +487,7 @@ func (x *LatestDataResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LatestDataResponse.ProtoReflect.Descriptor instead.
 func (*LatestDataResponse) Descriptor() ([]byte, []int) {
-	return file_protos_server_server_proto_rawDescGZIP(), []int{7}
+	return file_protos_nightswatch_nightswatch_proto_rawDescGZIP(), []int{7}
 }
 
 func (x *LatestDataResponse) GetInstalledApps() *InstalledApps {
@@ -521,7 +521,7 @@ type InstalledApps_App struct {
 
 func (x *InstalledApps_App) Reset() {
 	*x = InstalledApps_App{}
-	mi := &file_protos_server_server_proto_msgTypes[8]
+	mi := &file_protos_nightswatch_nightswatch_proto_msgTypes[8]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -533,7 +533,7 @@ func (x *InstalledApps_App) String() string {
 func (*InstalledApps_App) ProtoMessage() {}
 
 func (x *InstalledApps_App) ProtoReflect() protoreflect.Message {
-	mi := &file_protos_server_server_proto_msgTypes[8]
+	mi := &file_protos_nightswatch_nightswatch_proto_msgTypes[8]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -546,7 +546,7 @@ func (x *InstalledApps_App) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use InstalledApps_App.ProtoReflect.Descriptor instead.
 func (*InstalledApps_App) Descriptor() ([]byte, []int) {
-	return file_protos_server_server_proto_rawDescGZIP(), []int{2, 0}
+	return file_protos_nightswatch_nightswatch_proto_rawDescGZIP(), []int{2, 0}
 }
 
 func (x *InstalledApps_App) GetName() string {
@@ -563,11 +563,11 @@ func (x *InstalledApps_App) GetVersion() string {
 	return ""
 }
 
-var File_protos_server_server_proto protoreflect.FileDescriptor
+var File_protos_nightswatch_nightswatch_proto protoreflect.FileDescriptor
 
-const file_protos_server_server_proto_rawDesc = "" +
+const file_protos_nightswatch_nightswatch_proto_rawDesc = "" +
 	"\n" +
-	"\x1aprotos/server/server.proto\x12\x06server\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\"W\n" +
+	"$protos/nightswatch/nightswatch.proto\x12\vnightswatch\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\"W\n" +
 	"\x0fRegisterRequest\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n" +
 	"\x05email\x18\x02 \x01(\tR\x05email\x12\x1a\n" +
@@ -575,88 +575,88 @@ const file_protos_server_server_proto_rawDesc = "" +
 	"\fLoginRequest\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n" +
 	"\x05email\x18\x02 \x01(\tR\x05email\x12\x1a\n" +
-	"\bpassword\x18\x03 \x01(\tR\bpassword\"s\n" +
-	"\rInstalledApps\x12-\n" +
-	"\x04apps\x18\x01 \x03(\v2\x19.server.InstalledApps.AppR\x04apps\x1a3\n" +
+	"\bpassword\x18\x03 \x01(\tR\bpassword\"x\n" +
+	"\rInstalledApps\x122\n" +
+	"\x04apps\x18\x01 \x03(\v2\x1e.nightswatch.InstalledApps.AppR\x04apps\x1a3\n" +
 	"\x03App\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x18\n" +
 	"\aversion\x18\x02 \x01(\tR\aversion\"%\n" +
 	"\tOSVersion\x12\x18\n" +
 	"\aversion\x18\x01 \x01(\tR\aversion\"*\n" +
 	"\x0eOSQueryVersion\x12\x18\n" +
-	"\aversion\x18\x01 \x01(\tR\aversion\"\x88\x02\n" +
-	"\x11DeviceDataRequest\x12B\n" +
-	"\x11data_request_type\x18\x01 \x01(\x0e2\x16.server.DeviceDataTypeR\x0fdataRequestType\x12<\n" +
-	"\x0einstalled_apps\x18\x02 \x01(\v2\x15.server.InstalledAppsR\rinstalledApps\x120\n" +
+	"\aversion\x18\x01 \x01(\tR\aversion\"\x9c\x02\n" +
+	"\x11DeviceDataRequest\x12G\n" +
+	"\x11data_request_type\x18\x01 \x01(\x0e2\x1b.nightswatch.DeviceDataTypeR\x0fdataRequestType\x12A\n" +
+	"\x0einstalled_apps\x18\x02 \x01(\v2\x1a.nightswatch.InstalledAppsR\rinstalledApps\x125\n" +
 	"\n" +
-	"os_version\x18\x03 \x01(\v2\x11.server.OSVersionR\tosVersion\x12?\n" +
-	"\x0fosquery_version\x18\x04 \x01(\v2\x16.server.OSQueryVersionR\x0eosqueryVersion\"r\n" +
+	"os_version\x18\x03 \x01(\v2\x16.nightswatch.OSVersionR\tosVersion\x12D\n" +
+	"\x0fosquery_version\x18\x04 \x01(\v2\x1b.nightswatch.OSQueryVersionR\x0eosqueryVersion\"w\n" +
 	"\x11LatestDataRequest\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\tR\x06userId\x12D\n" +
-	"\x12data_request_types\x18\x02 \x03(\x0e2\x16.server.DeviceDataTypeR\x10dataRequestTypes\"\xc5\x01\n" +
-	"\x12LatestDataResponse\x12<\n" +
-	"\x0einstalled_apps\x18\x01 \x01(\v2\x15.server.InstalledAppsR\rinstalledApps\x120\n" +
+	"\auser_id\x18\x01 \x01(\tR\x06userId\x12I\n" +
+	"\x12data_request_types\x18\x02 \x03(\x0e2\x1b.nightswatch.DeviceDataTypeR\x10dataRequestTypes\"\xd4\x01\n" +
+	"\x12LatestDataResponse\x12A\n" +
+	"\x0einstalled_apps\x18\x01 \x01(\v2\x1a.nightswatch.InstalledAppsR\rinstalledApps\x125\n" +
 	"\n" +
-	"os_version\x18\x02 \x01(\v2\x11.server.OSVersionR\tosVersion\x12?\n" +
-	"\x0fosquery_version\x18\x03 \x01(\v2\x16.server.OSQueryVersionR\x0eosqueryVersion*V\n" +
+	"os_version\x18\x02 \x01(\v2\x16.nightswatch.OSVersionR\tosVersion\x12D\n" +
+	"\x0fosquery_version\x18\x03 \x01(\v2\x1b.nightswatch.OSQueryVersionR\x0eosqueryVersion*V\n" +
 	"\x0eDeviceDataType\x12\v\n" +
 	"\aUNKNOWN\x10\x00\x12\x12\n" +
 	"\x0eINSTALLED_APPS\x10\x01\x12\x0e\n" +
 	"\n" +
 	"OS_VERSION\x10\x02\x12\x13\n" +
-	"\x0fOSQUERY_VERSION\x10\x032\x80\x03\n" +
-	"\x12NightsWatchService\x12T\n" +
-	"\bRegister\x12\x17.server.RegisterRequest\x1a\x16.google.protobuf.Empty\"\x17\x82\xd3\xe4\x93\x02\x11:\x01*\"\f/v1/register\x12K\n" +
-	"\x05Login\x12\x14.server.LoginRequest\x1a\x16.google.protobuf.Empty\"\x14\x82\xd3\xe4\x93\x02\x0e:\x01*\"\t/v1/login\x12_\n" +
-	"\x0eSendDeviceData\x12\x19.server.DeviceDataRequest\x1a\x16.google.protobuf.Empty\"\x1a\x82\xd3\xe4\x93\x02\x14:\x01*\"\x0f/v1/device/data\x12f\n" +
+	"\x0fOSQUERY_VERSION\x10\x032\x99\x03\n" +
+	"\x12NightsWatchService\x12Y\n" +
+	"\bRegister\x12\x1c.nightswatch.RegisterRequest\x1a\x16.google.protobuf.Empty\"\x17\x82\xd3\xe4\x93\x02\x11:\x01*\"\f/v1/register\x12P\n" +
+	"\x05Login\x12\x19.nightswatch.LoginRequest\x1a\x16.google.protobuf.Empty\"\x14\x82\xd3\xe4\x93\x02\x0e:\x01*\"\t/v1/login\x12d\n" +
+	"\x0eSendDeviceData\x12\x1e.nightswatch.DeviceDataRequest\x1a\x16.google.protobuf.Empty\"\x1a\x82\xd3\xe4\x93\x02\x14:\x01*\"\x0f/v1/device/data\x12p\n" +
 	"\n" +
-	"LatestData\x12\x19.server.LatestDataRequest\x1a\x1a.server.LatestDataResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/device/data/{user_id}B3Z1github.com/nightswatchprotobufs/gogenproto/serverb\x06proto3"
+	"LatestData\x12\x1e.nightswatch.LatestDataRequest\x1a\x1f.nightswatch.LatestDataResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/device/data/{user_id}B8Z6github.com/nightswatchprotobufs/gogenproto/nightswatchb\x06proto3"
 
 var (
-	file_protos_server_server_proto_rawDescOnce sync.Once
-	file_protos_server_server_proto_rawDescData []byte
+	file_protos_nightswatch_nightswatch_proto_rawDescOnce sync.Once
+	file_protos_nightswatch_nightswatch_proto_rawDescData []byte
 )
 
-func file_protos_server_server_proto_rawDescGZIP() []byte {
-	file_protos_server_server_proto_rawDescOnce.Do(func() {
-		file_protos_server_server_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_protos_server_server_proto_rawDesc), len(file_protos_server_server_proto_rawDesc)))
+func file_protos_nightswatch_nightswatch_proto_rawDescGZIP() []byte {
+	file_protos_nightswatch_nightswatch_proto_rawDescOnce.Do(func() {
+		file_protos_nightswatch_nightswatch_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_protos_nightswatch_nightswatch_proto_rawDesc), len(file_protos_nightswatch_nightswatch_proto_rawDesc)))
 	})
-	return file_protos_server_server_proto_rawDescData
+	return file_protos_nightswatch_nightswatch_proto_rawDescData
 }
 
-var file_protos_server_server_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_protos_server_server_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
-var file_protos_server_server_proto_goTypes = []any{
-	(DeviceDataType)(0),        // 0: server.DeviceDataType
-	(*RegisterRequest)(nil),    // 1: server.RegisterRequest
-	(*LoginRequest)(nil),       // 2: server.LoginRequest
-	(*InstalledApps)(nil),      // 3: server.InstalledApps
-	(*OSVersion)(nil),          // 4: server.OSVersion
-	(*OSQueryVersion)(nil),     // 5: server.OSQueryVersion
-	(*DeviceDataRequest)(nil),  // 6: server.DeviceDataRequest
-	(*LatestDataRequest)(nil),  // 7: server.LatestDataRequest
-	(*LatestDataResponse)(nil), // 8: server.LatestDataResponse
-	(*InstalledApps_App)(nil),  // 9: server.InstalledApps.App
+var file_protos_nightswatch_nightswatch_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
+var file_protos_nightswatch_nightswatch_proto_msgTypes = make([]protoimpl.MessageInfo, 9)
+var file_protos_nightswatch_nightswatch_proto_goTypes = []any{
+	(DeviceDataType)(0),        // 0: nightswatch.DeviceDataType
+	(*RegisterRequest)(nil),    // 1: nightswatch.RegisterRequest
+	(*LoginRequest)(nil),       // 2: nightswatch.LoginRequest
+	(*InstalledApps)(nil),      // 3: nightswatch.InstalledApps
+	(*OSVersion)(nil),          // 4: nightswatch.OSVersion
+	(*OSQueryVersion)(nil),     // 5: nightswatch.OSQueryVersion
+	(*DeviceDataRequest)(nil),  // 6: nightswatch.DeviceDataRequest
+	(*LatestDataRequest)(nil),  // 7: nightswatch.LatestDataRequest
+	(*LatestDataResponse)(nil), // 8: nightswatch.LatestDataResponse
+	(*InstalledApps_App)(nil),  // 9: nightswatch.InstalledApps.App
 	(*emptypb.Empty)(nil),      // 10: google.protobuf.Empty
 }
-var file_protos_server_server_proto_depIdxs = []int32{
-	9,  // 0: server.InstalledApps.apps:type_name -> server.InstalledApps.App
-	0,  // 1: server.DeviceDataRequest.data_request_type:type_name -> server.DeviceDataType
-	3,  // 2: server.DeviceDataRequest.installed_apps:type_name -> server.InstalledApps
-	4,  // 3: server.DeviceDataRequest.os_version:type_name -> server.OSVersion
-	5,  // 4: server.DeviceDataRequest.osquery_version:type_name -> server.OSQueryVersion
-	0,  // 5: server.LatestDataRequest.data_request_types:type_name -> server.DeviceDataType
-	3,  // 6: server.LatestDataResponse.installed_apps:type_name -> server.InstalledApps
-	4,  // 7: server.LatestDataResponse.os_version:type_name -> server.OSVersion
-	5,  // 8: server.LatestDataResponse.osquery_version:type_name -> server.OSQueryVersion
-	1,  // 9: server.NightsWatchService.Register:input_type -> server.RegisterRequest
-	2,  // 10: server.NightsWatchService.Login:input_type -> server.LoginRequest
-	6,  // 11: server.NightsWatchService.SendDeviceData:input_type -> server.DeviceDataRequest
-	7,  // 12: server.NightsWatchService.LatestData:input_type -> server.LatestDataRequest
-	10, // 13: server.NightsWatchService.Register:output_type -> google.protobuf.Empty
-	10, // 14: server.NightsWatchService.Login:output_type -> google.protobuf.Empty
-	10, // 15: server.NightsWatchService.SendDeviceData:output_type -> google.protobuf.Empty
-	8,  // 16: server.NightsWatchService.LatestData:output_type -> server.LatestDataResponse
+var file_protos_nightswatch_nightswatch_proto_depIdxs = []int32{
+	9,  // 0: nightswatch.InstalledApps.apps:type_name -> nightswatch.InstalledApps.App
+	0,  // 1: nightswatch.DeviceDataRequest.data_request_type:type_name -> nightswatch.DeviceDataType
+	3,  // 2: nightswatch.DeviceDataRequest.installed_apps:type_name -> nightswatch.InstalledApps
+	4,  // 3: nightswatch.DeviceDataRequest.os_version:type_name -> nightswatch.OSVersion
+	5,  // 4: nightswatch.DeviceDataRequest.osquery_version:type_name -> nightswatch.OSQueryVersion
+	0,  // 5: nightswatch.LatestDataRequest.data_request_types:type_name -> nightswatch.DeviceDataType
+	3,  // 6: nightswatch.LatestDataResponse.installed_apps:type_name -> nightswatch.InstalledApps
+	4,  // 7: nightswatch.LatestDataResponse.os_version:type_name -> nightswatch.OSVersion
+	5,  // 8: nightswatch.LatestDataResponse.osquery_version:type_name -> nightswatch.OSQueryVersion
+	1,  // 9: nightswatch.NightsWatchService.Register:input_type -> nightswatch.RegisterRequest
+	2,  // 10: nightswatch.NightsWatchService.Login:input_type -> nightswatch.LoginRequest
+	6,  // 11: nightswatch.NightsWatchService.SendDeviceData:input_type -> nightswatch.DeviceDataRequest
+	7,  // 12: nightswatch.NightsWatchService.LatestData:input_type -> nightswatch.LatestDataRequest
+	10, // 13: nightswatch.NightsWatchService.Register:output_type -> google.protobuf.Empty
+	10, // 14: nightswatch.NightsWatchService.Login:output_type -> google.protobuf.Empty
+	10, // 15: nightswatch.NightsWatchService.SendDeviceData:output_type -> google.protobuf.Empty
+	8,  // 16: nightswatch.NightsWatchService.LatestData:output_type -> nightswatch.LatestDataResponse
 	13, // [13:17] is the sub-list for method output_type
 	9,  // [9:13] is the sub-list for method input_type
 	9,  // [9:9] is the sub-list for extension type_name
@@ -664,27 +664,27 @@ var file_protos_server_server_proto_depIdxs = []int32{
 	0,  // [0:9] is the sub-list for field type_name
 }
 
-func init() { file_protos_server_server_proto_init() }
-func file_protos_server_server_proto_init() {
-	if File_protos_server_server_proto != nil {
+func init() { file_protos_nightswatch_nightswatch_proto_init() }
+func file_protos_nightswatch_nightswatch_proto_init() {
+	if File_protos_nightswatch_nightswatch_proto != nil {
 		return
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_protos_server_server_proto_rawDesc), len(file_protos_server_server_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_protos_nightswatch_nightswatch_proto_rawDesc), len(file_protos_nightswatch_nightswatch_proto_rawDesc)),
 			NumEnums:      1,
 			NumMessages:   9,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_protos_server_server_proto_goTypes,
-		DependencyIndexes: file_protos_server_server_proto_depIdxs,
-		EnumInfos:         file_protos_server_server_proto_enumTypes,
-		MessageInfos:      file_protos_server_server_proto_msgTypes,
+		GoTypes:           file_protos_nightswatch_nightswatch_proto_goTypes,
+		DependencyIndexes: file_protos_nightswatch_nightswatch_proto_depIdxs,
+		EnumInfos:         file_protos_nightswatch_nightswatch_proto_enumTypes,
+		MessageInfos:      file_protos_nightswatch_nightswatch_proto_msgTypes,
 	}.Build()
-	File_protos_server_server_proto = out.File
-	file_protos_server_server_proto_goTypes = nil
-	file_protos_server_server_proto_depIdxs = nil
+	File_protos_nightswatch_nightswatch_proto = out.File
+	file_protos_nightswatch_nightswatch_proto_goTypes = nil
+	file_protos_nightswatch_nightswatch_proto_depIdxs = nil
 }

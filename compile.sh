@@ -11,4 +11,4 @@ protoc -I . \
   --go-grpc_opt=module=github.com/nightswatchprotobufs \
   --grpc-gateway_out . \
   --grpc-gateway_opt=module=github.com/nightswatchprotobufs \
-  ./protos/server/server.proto
+  ./protos/**/*.proto
