@@ -75,7 +75,9 @@ message OSQueryVersion{
 
 // DeviceDataRequest is the request for the SendDeviceData method
 message DeviceDataRequest {
-  repeated DeviceDataType data_request_types = 1;
+  InstalledApps installed_apps = 1;
+  OSVersion os_version = 2;
+  OSQueryVersion osquery_version = 3;
 }
 
 // LatestDataRequest is the request for the LatestData method
