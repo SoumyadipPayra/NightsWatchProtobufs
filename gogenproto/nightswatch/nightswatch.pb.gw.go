@@ -107,11 +107,11 @@ func local_request_NightsWatchService_SendDeviceData_0(ctx context.Context, mars
 	return msg, metadata, err
 }
 
-var filter_NightsWatchService_LatestData_0 = &utilities.DoubleArray{Encoding: map[string]int{"user_id": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
+var filter_NightsWatchService_GetLatestData_0 = &utilities.DoubleArray{Encoding: map[string]int{"user_id": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
 
-func request_NightsWatchService_LatestData_0(ctx context.Context, marshaler runtime.Marshaler, client NightsWatchServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func request_NightsWatchService_GetLatestData_0(ctx context.Context, marshaler runtime.Marshaler, client NightsWatchServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq LatestDataRequest
+		protoReq GetLatestDataRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -127,16 +127,16 @@ func request_NightsWatchService_LatestData_0(ctx context.Context, marshaler runt
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_NightsWatchService_LatestData_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_NightsWatchService_GetLatestData_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	msg, err := client.LatestData(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
+	msg, err := client.GetLatestData(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 }
 
-func local_request_NightsWatchService_LatestData_0(ctx context.Context, marshaler runtime.Marshaler, server NightsWatchServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
+func local_request_NightsWatchService_GetLatestData_0(ctx context.Context, marshaler runtime.Marshaler, server NightsWatchServiceServer, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
-		protoReq LatestDataRequest
+		protoReq GetLatestDataRequest
 		metadata runtime.ServerMetadata
 		err      error
 	)
@@ -151,10 +151,10 @@ func local_request_NightsWatchService_LatestData_0(ctx context.Context, marshale
 	if err := req.ParseForm(); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_NightsWatchService_LatestData_0); err != nil {
+	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_NightsWatchService_GetLatestData_0); err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
 	}
-	msg, err := server.LatestData(ctx, &protoReq)
+	msg, err := server.GetLatestData(ctx, &protoReq)
 	return msg, metadata, err
 }
 
@@ -224,25 +224,25 @@ func RegisterNightsWatchServiceHandlerServer(ctx context.Context, mux *runtime.S
 		}
 		forward_NightsWatchService_SendDeviceData_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_NightsWatchService_LatestData_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_NightsWatchService_GetLatestData_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/nightswatch.NightsWatchService/LatestData", runtime.WithHTTPPathPattern("/v1/device/data/{user_id}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/nightswatch.NightsWatchService/GetLatestData", runtime.WithHTTPPathPattern("/v1/device/data/{user_id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := local_request_NightsWatchService_LatestData_0(annotatedContext, inboundMarshaler, server, req, pathParams)
+		resp, md, err := local_request_NightsWatchService_GetLatestData_0(annotatedContext, inboundMarshaler, server, req, pathParams)
 		md.HeaderMD, md.TrailerMD = metadata.Join(md.HeaderMD, stream.Header()), metadata.Join(md.TrailerMD, stream.Trailer())
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_NightsWatchService_LatestData_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_NightsWatchService_GetLatestData_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 
 	return nil
@@ -335,22 +335,22 @@ func RegisterNightsWatchServiceHandlerClient(ctx context.Context, mux *runtime.S
 		}
 		forward_NightsWatchService_SendDeviceData_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
-	mux.Handle(http.MethodGet, pattern_NightsWatchService_LatestData_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
+	mux.Handle(http.MethodGet, pattern_NightsWatchService_GetLatestData_0, func(w http.ResponseWriter, req *http.Request, pathParams map[string]string) {
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/nightswatch.NightsWatchService/LatestData", runtime.WithHTTPPathPattern("/v1/device/data/{user_id}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/nightswatch.NightsWatchService/GetLatestData", runtime.WithHTTPPathPattern("/v1/device/data/{user_id}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		resp, md, err := request_NightsWatchService_LatestData_0(annotatedContext, inboundMarshaler, client, req, pathParams)
+		resp, md, err := request_NightsWatchService_GetLatestData_0(annotatedContext, inboundMarshaler, client, req, pathParams)
 		annotatedContext = runtime.NewServerMetadataContext(annotatedContext, md)
 		if err != nil {
 			runtime.HTTPError(annotatedContext, mux, outboundMarshaler, w, req, err)
 			return
 		}
-		forward_NightsWatchService_LatestData_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
+		forward_NightsWatchService_GetLatestData_0(annotatedContext, mux, outboundMarshaler, w, req, resp, mux.GetForwardResponseOptions()...)
 	})
 	return nil
 }
@@ -359,12 +359,12 @@ var (
 	pattern_NightsWatchService_Register_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "register"}, ""))
 	pattern_NightsWatchService_Login_0          = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "login"}, ""))
 	pattern_NightsWatchService_SendDeviceData_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "device", "data"}, ""))
-	pattern_NightsWatchService_LatestData_0     = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"v1", "device", "data", "user_id"}, ""))
+	pattern_NightsWatchService_GetLatestData_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"v1", "device", "data", "user_id"}, ""))
 )
 
 var (
 	forward_NightsWatchService_Register_0       = runtime.ForwardResponseMessage
 	forward_NightsWatchService_Login_0          = runtime.ForwardResponseMessage
 	forward_NightsWatchService_SendDeviceData_0 = runtime.ForwardResponseMessage
-	forward_NightsWatchService_LatestData_0     = runtime.ForwardResponseMessage
+	forward_NightsWatchService_GetLatestData_0  = runtime.ForwardResponseMessage
 )

@@ -23,7 +23,7 @@ const (
 	NightsWatchService_Register_FullMethodName       = "/nightswatch.NightsWatchService/Register"
 	NightsWatchService_Login_FullMethodName          = "/nightswatch.NightsWatchService/Login"
 	NightsWatchService_SendDeviceData_FullMethodName = "/nightswatch.NightsWatchService/SendDeviceData"
-	NightsWatchService_LatestData_FullMethodName     = "/nightswatch.NightsWatchService/LatestData"
+	NightsWatchService_GetLatestData_FullMethodName  = "/nightswatch.NightsWatchService/GetLatestData"
 )
 
 // NightsWatchServiceClient is the client API for NightsWatchService service.
@@ -34,7 +34,7 @@ type NightsWatchServiceClient interface {
 	Register(ctx context.Context, in *RegisterRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	SendDeviceData(ctx context.Context, in *DeviceDataRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
-	LatestData(ctx context.Context, in *LatestDataRequest, opts ...grpc.CallOption) (*LatestDataResponse, error)
+	GetLatestData(ctx context.Context, in *GetLatestDataRequest, opts ...grpc.CallOption) (*GetLatestDataResponse, error)
 }
 
 type nightsWatchServiceClient struct {
@@ -75,10 +75,10 @@ func (c *nightsWatchServiceClient) SendDeviceData(ctx context.Context, in *Devic
 	return out, nil
 }
 
-func (c *nightsWatchServiceClient) LatestData(ctx context.Context, in *LatestDataRequest, opts ...grpc.CallOption) (*LatestDataResponse, error) {
+func (c *nightsWatchServiceClient) GetLatestData(ctx context.Context, in *GetLatestDataRequest, opts ...grpc.CallOption) (*GetLatestDataResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(LatestDataResponse)
-	err := c.cc.Invoke(ctx, NightsWatchService_LatestData_FullMethodName, in, out, cOpts...)
+	out := new(GetLatestDataResponse)
+	err := c.cc.Invoke(ctx, NightsWatchService_GetLatestData_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -93,7 +93,7 @@ type NightsWatchServiceServer interface {
 	Register(context.Context, *RegisterRequest) (*emptypb.Empty, error)
 	Login(context.Context, *LoginRequest) (*emptypb.Empty, error)
 	SendDeviceData(context.Context, *DeviceDataRequest) (*emptypb.Empty, error)
-	LatestData(context.Context, *LatestDataRequest) (*LatestDataResponse, error)
+	GetLatestData(context.Context, *GetLatestDataRequest) (*GetLatestDataResponse, error)
 	mustEmbedUnimplementedNightsWatchServiceServer()
 }
 
@@ -113,8 +113,8 @@ func (UnimplementedNightsWatchServiceServer) Login(context.Context, *LoginReques
 func (UnimplementedNightsWatchServiceServer) SendDeviceData(context.Context, *DeviceDataRequest) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendDeviceData not implemented")
 }
-func (UnimplementedNightsWatchServiceServer) LatestData(context.Context, *LatestDataRequest) (*LatestDataResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method LatestData not implemented")
+func (UnimplementedNightsWatchServiceServer) GetLatestData(context.Context, *GetLatestDataRequest) (*GetLatestDataResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method GetLatestData not implemented")
 }
 func (UnimplementedNightsWatchServiceServer) mustEmbedUnimplementedNightsWatchServiceServer() {}
 func (UnimplementedNightsWatchServiceServer) testEmbeddedByValue()                            {}
@@ -191,20 +191,20 @@ func _NightsWatchService_SendDeviceData_Handler(srv interface{}, ctx context.Con
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NightsWatchService_LatestData_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(LatestDataRequest)
+func _NightsWatchService_GetLatestData_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(GetLatestDataRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NightsWatchServiceServer).LatestData(ctx, in)
+		return srv.(NightsWatchServiceServer).GetLatestData(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: NightsWatchService_LatestData_FullMethodName,
+		FullMethod: NightsWatchService_GetLatestData_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NightsWatchServiceServer).LatestData(ctx, req.(*LatestDataRequest))
+		return srv.(NightsWatchServiceServer).GetLatestData(ctx, req.(*GetLatestDataRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -229,8 +229,8 @@ var NightsWatchService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _NightsWatchService_SendDeviceData_Handler,
 		},
 		{
-			MethodName: "LatestData",
-			Handler:    _NightsWatchService_LatestData_Handler,
+			MethodName: "GetLatestData",
+			Handler:    _NightsWatchService_GetLatestData_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

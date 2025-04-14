@@ -14,19 +14,22 @@ service NightsWatchService {
       body: "*"
     };
   }
+
   rpc Login(LoginRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
       post: "/v1/login"
       body: "*"
     };
   }
+
   rpc SendDeviceData(DeviceDataRequest) returns (google.protobuf.Empty) {
     option (google.api.http) = {
       post: "/v1/device/data"
       body: "*"
     };
   }
-  rpc LatestData(LatestDataRequest) returns (LatestDataResponse) {
+
+  rpc GetLatestData(GetLatestDataRequest) returns (GetLatestDataResponse) {
     option (google.api.http) = {
       get: "/v1/device/data/{user_id}"
     };
@@ -79,12 +82,12 @@ message DeviceDataRequest {
 }
 
 // LatestDataRequest is the request for the LatestData method
-message LatestDataRequest {
+message GetLatestDataRequest {
   string user_id = 1;
   repeated DeviceDataType data_request_types = 2;
 }
 
-message LatestDataResponse {
+message GetLatestDataResponse {
   InstalledApps installed_apps = 1;
   OSVersion os_version = 2;
   OSQueryVersion osquery_version = 3;
