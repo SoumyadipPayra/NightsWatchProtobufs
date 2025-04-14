@@ -331,13 +331,10 @@ func (x *OSQueryVersion) GetVersion() string {
 
 // DeviceDataRequest is the request for the SendDeviceData method
 type DeviceDataRequest struct {
-	state           protoimpl.MessageState `protogen:"open.v1"`
-	DataRequestType DeviceDataType         `protobuf:"varint,1,opt,name=data_request_type,json=dataRequestType,proto3,enum=nightswatch.DeviceDataType" json:"data_request_type,omitempty"`
-	InstalledApps   *InstalledApps         `protobuf:"bytes,2,opt,name=installed_apps,json=installedApps,proto3" json:"installed_apps,omitempty"`
-	OsVersion       *OSVersion             `protobuf:"bytes,3,opt,name=os_version,json=osVersion,proto3" json:"os_version,omitempty"`
-	OsqueryVersion  *OSQueryVersion        `protobuf:"bytes,4,opt,name=osquery_version,json=osqueryVersion,proto3" json:"osquery_version,omitempty"`
-	unknownFields   protoimpl.UnknownFields
-	sizeCache       protoimpl.SizeCache
+	state            protoimpl.MessageState `protogen:"open.v1"`
+	DataRequestTypes []DeviceDataType       `protobuf:"varint,1,rep,packed,name=data_request_types,json=dataRequestTypes,proto3,enum=nightswatch.DeviceDataType" json:"data_request_types,omitempty"`
+	unknownFields    protoimpl.UnknownFields
+	sizeCache        protoimpl.SizeCache
 }
 
 func (x *DeviceDataRequest) Reset() {
@@ -370,30 +367,9 @@ func (*DeviceDataRequest) Descriptor() ([]byte, []int) {
 	return file_protos_nightswatch_nightswatch_proto_rawDescGZIP(), []int{5}
 }
 
-func (x *DeviceDataRequest) GetDataRequestType() DeviceDataType {
+func (x *DeviceDataRequest) GetDataRequestTypes() []DeviceDataType {
 	if x != nil {
-		return x.DataRequestType
-	}
-	return DeviceDataType_UNKNOWN
-}
-
-func (x *DeviceDataRequest) GetInstalledApps() *InstalledApps {
-	if x != nil {
-		return x.InstalledApps
-	}
-	return nil
-}
-
-func (x *DeviceDataRequest) GetOsVersion() *OSVersion {
-	if x != nil {
-		return x.OsVersion
-	}
-	return nil
-}
-
-func (x *DeviceDataRequest) GetOsqueryVersion() *OSQueryVersion {
-	if x != nil {
-		return x.OsqueryVersion
+		return x.DataRequestTypes
 	}
 	return nil
 }
@@ -584,13 +560,9 @@ const file_protos_nightswatch_nightswatch_proto_rawDesc = "" +
 	"\tOSVersion\x12\x18\n" +
 	"\aversion\x18\x01 \x01(\tR\aversion\"*\n" +
 	"\x0eOSQueryVersion\x12\x18\n" +
-	"\aversion\x18\x01 \x01(\tR\aversion\"\x9c\x02\n" +
-	"\x11DeviceDataRequest\x12G\n" +
-	"\x11data_request_type\x18\x01 \x01(\x0e2\x1b.nightswatch.DeviceDataTypeR\x0fdataRequestType\x12A\n" +
-	"\x0einstalled_apps\x18\x02 \x01(\v2\x1a.nightswatch.InstalledAppsR\rinstalledApps\x125\n" +
-	"\n" +
-	"os_version\x18\x03 \x01(\v2\x16.nightswatch.OSVersionR\tosVersion\x12D\n" +
-	"\x0fosquery_version\x18\x04 \x01(\v2\x1b.nightswatch.OSQueryVersionR\x0eosqueryVersion\"z\n" +
+	"\aversion\x18\x01 \x01(\tR\aversion\"^\n" +
+	"\x11DeviceDataRequest\x12I\n" +
+	"\x12data_request_types\x18\x01 \x03(\x0e2\x1b.nightswatch.DeviceDataTypeR\x10dataRequestTypes\"z\n" +
 	"\x14GetLatestDataRequest\x12\x17\n" +
 	"\auser_id\x18\x01 \x01(\tR\x06userId\x12I\n" +
 	"\x12data_request_types\x18\x02 \x03(\x0e2\x1b.nightswatch.DeviceDataTypeR\x10dataRequestTypes\"\xd7\x01\n" +
@@ -640,27 +612,24 @@ var file_protos_nightswatch_nightswatch_proto_goTypes = []any{
 }
 var file_protos_nightswatch_nightswatch_proto_depIdxs = []int32{
 	9,  // 0: nightswatch.InstalledApps.apps:type_name -> nightswatch.InstalledApps.App
-	0,  // 1: nightswatch.DeviceDataRequest.data_request_type:type_name -> nightswatch.DeviceDataType
-	3,  // 2: nightswatch.DeviceDataRequest.installed_apps:type_name -> nightswatch.InstalledApps
-	4,  // 3: nightswatch.DeviceDataRequest.os_version:type_name -> nightswatch.OSVersion
-	5,  // 4: nightswatch.DeviceDataRequest.osquery_version:type_name -> nightswatch.OSQueryVersion
-	0,  // 5: nightswatch.GetLatestDataRequest.data_request_types:type_name -> nightswatch.DeviceDataType
-	3,  // 6: nightswatch.GetLatestDataResponse.installed_apps:type_name -> nightswatch.InstalledApps
-	4,  // 7: nightswatch.GetLatestDataResponse.os_version:type_name -> nightswatch.OSVersion
-	5,  // 8: nightswatch.GetLatestDataResponse.osquery_version:type_name -> nightswatch.OSQueryVersion
-	1,  // 9: nightswatch.NightsWatchService.Register:input_type -> nightswatch.RegisterRequest
-	2,  // 10: nightswatch.NightsWatchService.Login:input_type -> nightswatch.LoginRequest
-	6,  // 11: nightswatch.NightsWatchService.SendDeviceData:input_type -> nightswatch.DeviceDataRequest
-	7,  // 12: nightswatch.NightsWatchService.GetLatestData:input_type -> nightswatch.GetLatestDataRequest
-	10, // 13: nightswatch.NightsWatchService.Register:output_type -> google.protobuf.Empty
-	10, // 14: nightswatch.NightsWatchService.Login:output_type -> google.protobuf.Empty
-	10, // 15: nightswatch.NightsWatchService.SendDeviceData:output_type -> google.protobuf.Empty
-	8,  // 16: nightswatch.NightsWatchService.GetLatestData:output_type -> nightswatch.GetLatestDataResponse
-	13, // [13:17] is the sub-list for method output_type
-	9,  // [9:13] is the sub-list for method input_type
-	9,  // [9:9] is the sub-list for extension type_name
-	9,  // [9:9] is the sub-list for extension extendee
-	0,  // [0:9] is the sub-list for field type_name
+	0,  // 1: nightswatch.DeviceDataRequest.data_request_types:type_name -> nightswatch.DeviceDataType
+	0,  // 2: nightswatch.GetLatestDataRequest.data_request_types:type_name -> nightswatch.DeviceDataType
+	3,  // 3: nightswatch.GetLatestDataResponse.installed_apps:type_name -> nightswatch.InstalledApps
+	4,  // 4: nightswatch.GetLatestDataResponse.os_version:type_name -> nightswatch.OSVersion
+	5,  // 5: nightswatch.GetLatestDataResponse.osquery_version:type_name -> nightswatch.OSQueryVersion
+	1,  // 6: nightswatch.NightsWatchService.Register:input_type -> nightswatch.RegisterRequest
+	2,  // 7: nightswatch.NightsWatchService.Login:input_type -> nightswatch.LoginRequest
+	6,  // 8: nightswatch.NightsWatchService.SendDeviceData:input_type -> nightswatch.DeviceDataRequest
+	7,  // 9: nightswatch.NightsWatchService.GetLatestData:input_type -> nightswatch.GetLatestDataRequest
+	10, // 10: nightswatch.NightsWatchService.Register:output_type -> google.protobuf.Empty
+	10, // 11: nightswatch.NightsWatchService.Login:output_type -> google.protobuf.Empty
+	10, // 12: nightswatch.NightsWatchService.SendDeviceData:output_type -> google.protobuf.Empty
+	8,  // 13: nightswatch.NightsWatchService.GetLatestData:output_type -> nightswatch.GetLatestDataResponse
+	10, // [10:14] is the sub-list for method output_type
+	6,  // [6:10] is the sub-list for method input_type
+	6,  // [6:6] is the sub-list for extension type_name
+	6,  // [6:6] is the sub-list for extension extendee
+	0,  // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_protos_nightswatch_nightswatch_proto_init() }
