@@ -107,12 +107,11 @@ func local_request_NightsWatchService_SendDeviceData_0(ctx context.Context, mars
 	return msg, metadata, err
 }
 
-var filter_NightsWatchService_GetLatestData_0 = &utilities.DoubleArray{Encoding: map[string]int{"user_name": 0}, Base: []int{1, 1, 0}, Check: []int{0, 1, 2}}
-
 func request_NightsWatchService_GetLatestData_0(ctx context.Context, marshaler runtime.Marshaler, client NightsWatchServiceClient, req *http.Request, pathParams map[string]string) (proto.Message, runtime.ServerMetadata, error) {
 	var (
 		protoReq GetLatestDataRequest
 		metadata runtime.ServerMetadata
+		es       []int32
 		err      error
 	)
 	io.Copy(io.Discard, req.Body)
@@ -124,12 +123,19 @@ func request_NightsWatchService_GetLatestData_0(ctx context.Context, marshaler r
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "user_name", err)
 	}
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	val, ok = pathParams["data_request_types"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "data_request_types")
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_NightsWatchService_GetLatestData_0); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	es, err = runtime.EnumSlice(val, ",", DeviceDataType_value)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "data_request_types", err)
 	}
+	s := make([]DeviceDataType, len(es))
+	for i, v := range es {
+		s[i] = DeviceDataType(v)
+	}
+	protoReq.DataRequestTypes = s
 	msg, err := client.GetLatestData(ctx, &protoReq, grpc.Header(&metadata.HeaderMD), grpc.Trailer(&metadata.TrailerMD))
 	return msg, metadata, err
 }
@@ -138,6 +144,7 @@ func local_request_NightsWatchService_GetLatestData_0(ctx context.Context, marsh
 	var (
 		protoReq GetLatestDataRequest
 		metadata runtime.ServerMetadata
+		es       []int32
 		err      error
 	)
 	val, ok := pathParams["user_name"]
@@ -148,12 +155,19 @@ func local_request_NightsWatchService_GetLatestData_0(ctx context.Context, marsh
 	if err != nil {
 		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "user_name", err)
 	}
-	if err := req.ParseForm(); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	val, ok = pathParams["data_request_types"]
+	if !ok {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "missing parameter %s", "data_request_types")
 	}
-	if err := runtime.PopulateQueryParameters(&protoReq, req.Form, filter_NightsWatchService_GetLatestData_0); err != nil {
-		return nil, metadata, status.Errorf(codes.InvalidArgument, "%v", err)
+	es, err = runtime.EnumSlice(val, ",", DeviceDataType_value)
+	if err != nil {
+		return nil, metadata, status.Errorf(codes.InvalidArgument, "type mismatch, parameter: %s, error: %v", "data_request_types", err)
 	}
+	s := make([]DeviceDataType, len(es))
+	for i, v := range es {
+		s[i] = DeviceDataType(v)
+	}
+	protoReq.DataRequestTypes = s
 	msg, err := server.GetLatestData(ctx, &protoReq)
 	return msg, metadata, err
 }
@@ -230,7 +244,7 @@ func RegisterNightsWatchServiceHandlerServer(ctx context.Context, mux *runtime.S
 		var stream runtime.ServerTransportStream
 		ctx = grpc.NewContextWithServerTransportStream(ctx, &stream)
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/nightswatch.NightsWatchService/GetLatestData", runtime.WithHTTPPathPattern("/v1/device/data/{user_name}"))
+		annotatedContext, err := runtime.AnnotateIncomingContext(ctx, mux, req, "/nightswatch.NightsWatchService/GetLatestData", runtime.WithHTTPPathPattern("/v1/device/data/{user_name}/{data_request_types=*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -339,7 +353,7 @@ func RegisterNightsWatchServiceHandlerClient(ctx context.Context, mux *runtime.S
 		ctx, cancel := context.WithCancel(req.Context())
 		defer cancel()
 		inboundMarshaler, outboundMarshaler := runtime.MarshalerForRequest(mux, req)
-		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/nightswatch.NightsWatchService/GetLatestData", runtime.WithHTTPPathPattern("/v1/device/data/{user_name}"))
+		annotatedContext, err := runtime.AnnotateContext(ctx, mux, req, "/nightswatch.NightsWatchService/GetLatestData", runtime.WithHTTPPathPattern("/v1/device/data/{user_name}/{data_request_types=*}"))
 		if err != nil {
 			runtime.HTTPError(ctx, mux, outboundMarshaler, w, req, err)
 			return
@@ -359,7 +373,7 @@ var (
 	pattern_NightsWatchService_Register_0       = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "register"}, ""))
 	pattern_NightsWatchService_Login_0          = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1}, []string{"v1", "login"}, ""))
 	pattern_NightsWatchService_SendDeviceData_0 = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2}, []string{"v1", "device", "data"}, ""))
-	pattern_NightsWatchService_GetLatestData_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3}, []string{"v1", "device", "data", "user_name"}, ""))
+	pattern_NightsWatchService_GetLatestData_0  = runtime.MustPattern(runtime.NewPattern(1, []int{2, 0, 2, 1, 2, 2, 1, 0, 4, 1, 5, 3, 1, 0, 4, 1, 5, 4}, []string{"v1", "device", "data", "user_name", "data_request_types"}, ""))
 )
 
 var (
