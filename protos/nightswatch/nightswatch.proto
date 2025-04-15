@@ -9,7 +9,7 @@ service NightsWatchService {
   // Service methods will be defined here
   rpc Register(RegisterRequest) returns (google.protobuf.Empty) {}
 
-  rpc Login(LoginRequest) returns (google.protobuf.Empty) {}
+  rpc UserLogin(UserLoginRequest) returns (UserLoginResponse) {}
 
   rpc SendDeviceData(DeviceDataRequest) returns (google.protobuf.Empty) {}
 
@@ -19,22 +19,17 @@ service NightsWatchService {
 // Message definitions will be added here
 message RegisterRequest {
   string name = 1;
-  string email = 2;
-  string password = 3;
+  string password = 2;
 }
 
 // LoginRequest is the request for the Login method
-message LoginRequest {
+message UserLoginRequest {
   string name = 1;
-  string email = 2;
-  string password = 3;
+  string password = 2;
 }
 
-enum DeviceDataType {
-  UNKNOWN = 0;
-  INSTALLED_APPS = 1;
-  OS_VERSION = 2;
-  OSQUERY_VERSION = 3;
+message UserLoginResponse {
+  string token = 1;
 }
 
 message App{
@@ -63,8 +58,7 @@ message DeviceDataRequest {
 
 // LatestDataRequest is the request for the LatestData method
 message GetLatestDataRequest {
-  string user_name = 1;
-  repeated DeviceDataType data_request_types = 2;
+  repeated string user_name = 1;
 }
 
 message GetLatestDataResponse {
