@@ -58,8 +58,8 @@ enum DeviceDataType {
 }
 
 message App{
-  string name = 1;
-  string version = 2;
+    string name = 1;
+    string version = 2;
 }
 
 message InstalledApps{
