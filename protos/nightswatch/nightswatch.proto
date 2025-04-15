@@ -31,7 +31,7 @@ service NightsWatchService {
 
   rpc GetLatestData(GetLatestDataRequest) returns (GetLatestDataResponse) {
     option (google.api.http) = {
-      get: "/v1/device/data/{user_id}"
+      get: "/v1/device/data/{user_name}"
     };
   }
 }
@@ -83,7 +83,7 @@ message DeviceDataRequest {
 
 // LatestDataRequest is the request for the LatestData method
 message GetLatestDataRequest {
-  string user_id = 1;
+  string user_name = 1;
   repeated DeviceDataType data_request_types = 2;
 }
 

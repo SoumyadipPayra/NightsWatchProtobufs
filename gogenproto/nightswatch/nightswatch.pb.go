@@ -445,7 +445,7 @@ func (x *DeviceDataRequest) GetOsqueryVersion() *OSQueryVersion {
 // LatestDataRequest is the request for the LatestData method
 type GetLatestDataRequest struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
-	UserId           string                 `protobuf:"bytes,1,opt,name=user_id,json=userId,proto3" json:"user_id,omitempty"`
+	UserName         string                 `protobuf:"bytes,1,opt,name=user_name,json=userName,proto3" json:"user_name,omitempty"`
 	DataRequestTypes []DeviceDataType       `protobuf:"varint,2,rep,packed,name=data_request_types,json=dataRequestTypes,proto3,enum=nightswatch.DeviceDataType" json:"data_request_types,omitempty"`
 	unknownFields    protoimpl.UnknownFields
 	sizeCache        protoimpl.SizeCache
@@ -481,9 +481,9 @@ func (*GetLatestDataRequest) Descriptor() ([]byte, []int) {
 	return file_protos_nightswatch_nightswatch_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *GetLatestDataRequest) GetUserId() string {
+func (x *GetLatestDataRequest) GetUserName() string {
 	if x != nil {
-		return x.UserId
+		return x.UserName
 	}
 	return ""
 }
@@ -581,9 +581,9 @@ const file_protos_nightswatch_nightswatch_proto_rawDesc = "" +
 	"\x0einstalled_apps\x18\x01 \x01(\v2\x1a.nightswatch.InstalledAppsR\rinstalledApps\x125\n" +
 	"\n" +
 	"os_version\x18\x02 \x01(\v2\x16.nightswatch.OSVersionR\tosVersion\x12D\n" +
-	"\x0fosquery_version\x18\x03 \x01(\v2\x1b.nightswatch.OSQueryVersionR\x0eosqueryVersion\"z\n" +
-	"\x14GetLatestDataRequest\x12\x17\n" +
-	"\auser_id\x18\x01 \x01(\tR\x06userId\x12I\n" +
+	"\x0fosquery_version\x18\x03 \x01(\v2\x1b.nightswatch.OSQueryVersionR\x0eosqueryVersion\"~\n" +
+	"\x14GetLatestDataRequest\x12\x1b\n" +
+	"\tuser_name\x18\x01 \x01(\tR\buserName\x12I\n" +
 	"\x12data_request_types\x18\x02 \x03(\x0e2\x1b.nightswatch.DeviceDataTypeR\x10dataRequestTypes\"\xd7\x01\n" +
 	"\x15GetLatestDataResponse\x12A\n" +
 	"\x0einstalled_apps\x18\x01 \x01(\v2\x1a.nightswatch.InstalledAppsR\rinstalledApps\x125\n" +
@@ -595,12 +595,12 @@ const file_protos_nightswatch_nightswatch_proto_rawDesc = "" +
 	"\x0eINSTALLED_APPS\x10\x01\x12\x0e\n" +
 	"\n" +
 	"OS_VERSION\x10\x02\x12\x13\n" +
-	"\x0fOSQUERY_VERSION\x10\x032\xa2\x03\n" +
+	"\x0fOSQUERY_VERSION\x10\x032\xa4\x03\n" +
 	"\x12NightsWatchService\x12Y\n" +
 	"\bRegister\x12\x1c.nightswatch.RegisterRequest\x1a\x16.google.protobuf.Empty\"\x17\x82\xd3\xe4\x93\x02\x11:\x01*\"\f/v1/register\x12P\n" +
 	"\x05Login\x12\x19.nightswatch.LoginRequest\x1a\x16.google.protobuf.Empty\"\x14\x82\xd3\xe4\x93\x02\x0e:\x01*\"\t/v1/login\x12d\n" +
-	"\x0eSendDeviceData\x12\x1e.nightswatch.DeviceDataRequest\x1a\x16.google.protobuf.Empty\"\x1a\x82\xd3\xe4\x93\x02\x14:\x01*\"\x0f/v1/device/data\x12y\n" +
-	"\rGetLatestData\x12!.nightswatch.GetLatestDataRequest\x1a\".nightswatch.GetLatestDataResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/v1/device/data/{user_id}BGZEgithub.com/SoumyadipPayra/NightsWatchProtobufs/gogenproto/nightswatchb\x06proto3"
+	"\x0eSendDeviceData\x12\x1e.nightswatch.DeviceDataRequest\x1a\x16.google.protobuf.Empty\"\x1a\x82\xd3\xe4\x93\x02\x14:\x01*\"\x0f/v1/device/data\x12{\n" +
+	"\rGetLatestData\x12!.nightswatch.GetLatestDataRequest\x1a\".nightswatch.GetLatestDataResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/device/data/{user_name}BGZEgithub.com/SoumyadipPayra/NightsWatchProtobufs/gogenproto/nightswatchb\x06proto3"
 
 var (
 	file_protos_nightswatch_nightswatch_proto_rawDescOnce sync.Once
