@@ -9,7 +9,7 @@ service NightsWatchService {
   // Service methods will be defined here
   rpc Register(RegisterRequest) returns (google.protobuf.Empty) {}
 
-  rpc UserLogin(UserLoginRequest) returns (UserLoginResponse) {}
+  rpc Login(LoginRequest) returns (LoginResponse) {}
 
   rpc SendDeviceData(DeviceDataRequest) returns (google.protobuf.Empty) {}
 
@@ -23,12 +23,12 @@ message RegisterRequest {
 }
 
 // LoginRequest is the request for the Login method
-message UserLoginRequest {
+message LoginRequest {
   string name = 1;
   string password = 2;
 }
 
-message UserLoginResponse {
+message LoginResponse {
   string token = 1;
 }
 

@@ -21,7 +21,7 @@ const _ = grpc.SupportPackageIsVersion9
 
 const (
 	NightsWatchService_Register_FullMethodName       = "/nightswatch.NightsWatchService/Register"
-	NightsWatchService_UserLogin_FullMethodName      = "/nightswatch.NightsWatchService/UserLogin"
+	NightsWatchService_Login_FullMethodName          = "/nightswatch.NightsWatchService/Login"
 	NightsWatchService_SendDeviceData_FullMethodName = "/nightswatch.NightsWatchService/SendDeviceData"
 	NightsWatchService_GetLatestData_FullMethodName  = "/nightswatch.NightsWatchService/GetLatestData"
 )
@@ -32,7 +32,7 @@ const (
 type NightsWatchServiceClient interface {
 	// Service methods will be defined here
 	Register(ctx context.Context, in *RegisterRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
-	UserLogin(ctx context.Context, in *UserLoginRequest, opts ...grpc.CallOption) (*UserLoginResponse, error)
+	Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error)
 	SendDeviceData(ctx context.Context, in *DeviceDataRequest, opts ...grpc.CallOption) (*emptypb.Empty, error)
 	GetLatestData(ctx context.Context, in *GetLatestDataRequest, opts ...grpc.CallOption) (*GetLatestDataResponse, error)
 }
@@ -55,10 +55,10 @@ func (c *nightsWatchServiceClient) Register(ctx context.Context, in *RegisterReq
 	return out, nil
 }
 
-func (c *nightsWatchServiceClient) UserLogin(ctx context.Context, in *UserLoginRequest, opts ...grpc.CallOption) (*UserLoginResponse, error) {
+func (c *nightsWatchServiceClient) Login(ctx context.Context, in *LoginRequest, opts ...grpc.CallOption) (*LoginResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	out := new(UserLoginResponse)
-	err := c.cc.Invoke(ctx, NightsWatchService_UserLogin_FullMethodName, in, out, cOpts...)
+	out := new(LoginResponse)
+	err := c.cc.Invoke(ctx, NightsWatchService_Login_FullMethodName, in, out, cOpts...)
 	if err != nil {
 		return nil, err
 	}
@@ -91,7 +91,7 @@ func (c *nightsWatchServiceClient) GetLatestData(ctx context.Context, in *GetLat
 type NightsWatchServiceServer interface {
 	// Service methods will be defined here
 	Register(context.Context, *RegisterRequest) (*emptypb.Empty, error)
-	UserLogin(context.Context, *UserLoginRequest) (*UserLoginResponse, error)
+	Login(context.Context, *LoginRequest) (*LoginResponse, error)
 	SendDeviceData(context.Context, *DeviceDataRequest) (*emptypb.Empty, error)
 	GetLatestData(context.Context, *GetLatestDataRequest) (*GetLatestDataResponse, error)
 	mustEmbedUnimplementedNightsWatchServiceServer()
@@ -107,8 +107,8 @@ type UnimplementedNightsWatchServiceServer struct{}
 func (UnimplementedNightsWatchServiceServer) Register(context.Context, *RegisterRequest) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Register not implemented")
 }
-func (UnimplementedNightsWatchServiceServer) UserLogin(context.Context, *UserLoginRequest) (*UserLoginResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method UserLogin not implemented")
+func (UnimplementedNightsWatchServiceServer) Login(context.Context, *LoginRequest) (*LoginResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method Login not implemented")
 }
 func (UnimplementedNightsWatchServiceServer) SendDeviceData(context.Context, *DeviceDataRequest) (*emptypb.Empty, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method SendDeviceData not implemented")
@@ -155,20 +155,20 @@ func _NightsWatchService_Register_Handler(srv interface{}, ctx context.Context, 
 	return interceptor(ctx, in, info, handler)
 }
 
-func _NightsWatchService_UserLogin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(UserLoginRequest)
+func _NightsWatchService_Login_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(LoginRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(NightsWatchServiceServer).UserLogin(ctx, in)
+		return srv.(NightsWatchServiceServer).Login(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: NightsWatchService_UserLogin_FullMethodName,
+		FullMethod: NightsWatchService_Login_FullMethodName,
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(NightsWatchServiceServer).UserLogin(ctx, req.(*UserLoginRequest))
+		return srv.(NightsWatchServiceServer).Login(ctx, req.(*LoginRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -221,8 +221,8 @@ var NightsWatchService_ServiceDesc = grpc.ServiceDesc{
 			Handler:    _NightsWatchService_Register_Handler,
 		},
 		{
-			MethodName: "UserLogin",
-			Handler:    _NightsWatchService_UserLogin_Handler,
+			MethodName: "Login",
+			Handler:    _NightsWatchService_Login_Handler,
 		},
 		{
 			MethodName: "SendDeviceData",

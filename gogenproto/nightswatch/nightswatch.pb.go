@@ -76,7 +76,7 @@ func (x *RegisterRequest) GetPassword() string {
 }
 
 // LoginRequest is the request for the Login method
-type UserLoginRequest struct {
+type LoginRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Name          string                 `protobuf:"bytes,1,opt,name=name,proto3" json:"name,omitempty"`
 	Password      string                 `protobuf:"bytes,2,opt,name=password,proto3" json:"password,omitempty"`
@@ -84,20 +84,20 @@ type UserLoginRequest struct {
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *UserLoginRequest) Reset() {
-	*x = UserLoginRequest{}
+func (x *LoginRequest) Reset() {
+	*x = LoginRequest{}
 	mi := &file_protos_nightswatch_nightswatch_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *UserLoginRequest) String() string {
+func (x *LoginRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UserLoginRequest) ProtoMessage() {}
+func (*LoginRequest) ProtoMessage() {}
 
-func (x *UserLoginRequest) ProtoReflect() protoreflect.Message {
+func (x *LoginRequest) ProtoReflect() protoreflect.Message {
 	mi := &file_protos_nightswatch_nightswatch_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -109,46 +109,46 @@ func (x *UserLoginRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UserLoginRequest.ProtoReflect.Descriptor instead.
-func (*UserLoginRequest) Descriptor() ([]byte, []int) {
+// Deprecated: Use LoginRequest.ProtoReflect.Descriptor instead.
+func (*LoginRequest) Descriptor() ([]byte, []int) {
 	return file_protos_nightswatch_nightswatch_proto_rawDescGZIP(), []int{1}
 }
 
-func (x *UserLoginRequest) GetName() string {
+func (x *LoginRequest) GetName() string {
 	if x != nil {
 		return x.Name
 	}
 	return ""
 }
 
-func (x *UserLoginRequest) GetPassword() string {
+func (x *LoginRequest) GetPassword() string {
 	if x != nil {
 		return x.Password
 	}
 	return ""
 }
 
-type UserLoginResponse struct {
+type LoginResponse struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	Token         string                 `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
 
-func (x *UserLoginResponse) Reset() {
-	*x = UserLoginResponse{}
+func (x *LoginResponse) Reset() {
+	*x = LoginResponse{}
 	mi := &file_protos_nightswatch_nightswatch_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
 
-func (x *UserLoginResponse) String() string {
+func (x *LoginResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*UserLoginResponse) ProtoMessage() {}
+func (*LoginResponse) ProtoMessage() {}
 
-func (x *UserLoginResponse) ProtoReflect() protoreflect.Message {
+func (x *LoginResponse) ProtoReflect() protoreflect.Message {
 	mi := &file_protos_nightswatch_nightswatch_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
@@ -160,12 +160,12 @@ func (x *UserLoginResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use UserLoginResponse.ProtoReflect.Descriptor instead.
-func (*UserLoginResponse) Descriptor() ([]byte, []int) {
+// Deprecated: Use LoginResponse.ProtoReflect.Descriptor instead.
+func (*LoginResponse) Descriptor() ([]byte, []int) {
 	return file_protos_nightswatch_nightswatch_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *UserLoginResponse) GetToken() string {
+func (x *LoginResponse) GetToken() string {
 	if x != nil {
 		return x.Token
 	}
@@ -529,11 +529,11 @@ const file_protos_nightswatch_nightswatch_proto_rawDesc = "" +
 	"$protos/nightswatch/nightswatch.proto\x12\vnightswatch\x1a\x1bgoogle/protobuf/empty.proto\"A\n" +
 	"\x0fRegisterRequest\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x1a\n" +
-	"\bpassword\x18\x02 \x01(\tR\bpassword\"B\n" +
-	"\x10UserLoginRequest\x12\x12\n" +
+	"\bpassword\x18\x02 \x01(\tR\bpassword\">\n" +
+	"\fLoginRequest\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x1a\n" +
-	"\bpassword\x18\x02 \x01(\tR\bpassword\")\n" +
-	"\x11UserLoginResponse\x12\x14\n" +
+	"\bpassword\x18\x02 \x01(\tR\bpassword\"%\n" +
+	"\rLoginResponse\x12\x14\n" +
 	"\x05token\x18\x01 \x01(\tR\x05token\"3\n" +
 	"\x03App\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x18\n" +
@@ -555,10 +555,10 @@ const file_protos_nightswatch_nightswatch_proto_rawDesc = "" +
 	"\x0einstalled_apps\x18\x01 \x01(\v2\x1a.nightswatch.InstalledAppsR\rinstalledApps\x125\n" +
 	"\n" +
 	"os_version\x18\x02 \x01(\v2\x16.nightswatch.OSVersionR\tosVersion\x12D\n" +
-	"\x0fosquery_version\x18\x03 \x01(\v2\x1b.nightswatch.OSQueryVersionR\x0eosqueryVersion2\xcc\x02\n" +
+	"\x0fosquery_version\x18\x03 \x01(\v2\x1b.nightswatch.OSQueryVersionR\x0eosqueryVersion2\xc0\x02\n" +
 	"\x12NightsWatchService\x12B\n" +
-	"\bRegister\x12\x1c.nightswatch.RegisterRequest\x1a\x16.google.protobuf.Empty\"\x00\x12L\n" +
-	"\tUserLogin\x12\x1d.nightswatch.UserLoginRequest\x1a\x1e.nightswatch.UserLoginResponse\"\x00\x12J\n" +
+	"\bRegister\x12\x1c.nightswatch.RegisterRequest\x1a\x16.google.protobuf.Empty\"\x00\x12@\n" +
+	"\x05Login\x12\x19.nightswatch.LoginRequest\x1a\x1a.nightswatch.LoginResponse\"\x00\x12J\n" +
 	"\x0eSendDeviceData\x12\x1e.nightswatch.DeviceDataRequest\x1a\x16.google.protobuf.Empty\"\x00\x12X\n" +
 	"\rGetLatestData\x12!.nightswatch.GetLatestDataRequest\x1a\".nightswatch.GetLatestDataResponse\"\x00BGZEgithub.com/SoumyadipPayra/NightsWatchProtobufs/gogenproto/nightswatchb\x06proto3"
 
@@ -577,8 +577,8 @@ func file_protos_nightswatch_nightswatch_proto_rawDescGZIP() []byte {
 var file_protos_nightswatch_nightswatch_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_protos_nightswatch_nightswatch_proto_goTypes = []any{
 	(*RegisterRequest)(nil),       // 0: nightswatch.RegisterRequest
-	(*UserLoginRequest)(nil),      // 1: nightswatch.UserLoginRequest
-	(*UserLoginResponse)(nil),     // 2: nightswatch.UserLoginResponse
+	(*LoginRequest)(nil),          // 1: nightswatch.LoginRequest
+	(*LoginResponse)(nil),         // 2: nightswatch.LoginResponse
 	(*App)(nil),                   // 3: nightswatch.App
 	(*InstalledApps)(nil),         // 4: nightswatch.InstalledApps
 	(*OSVersion)(nil),             // 5: nightswatch.OSVersion
@@ -597,11 +597,11 @@ var file_protos_nightswatch_nightswatch_proto_depIdxs = []int32{
 	5,  // 5: nightswatch.GetLatestDataResponse.os_version:type_name -> nightswatch.OSVersion
 	6,  // 6: nightswatch.GetLatestDataResponse.osquery_version:type_name -> nightswatch.OSQueryVersion
 	0,  // 7: nightswatch.NightsWatchService.Register:input_type -> nightswatch.RegisterRequest
-	1,  // 8: nightswatch.NightsWatchService.UserLogin:input_type -> nightswatch.UserLoginRequest
+	1,  // 8: nightswatch.NightsWatchService.Login:input_type -> nightswatch.LoginRequest
 	7,  // 9: nightswatch.NightsWatchService.SendDeviceData:input_type -> nightswatch.DeviceDataRequest
 	8,  // 10: nightswatch.NightsWatchService.GetLatestData:input_type -> nightswatch.GetLatestDataRequest
 	10, // 11: nightswatch.NightsWatchService.Register:output_type -> google.protobuf.Empty
-	2,  // 12: nightswatch.NightsWatchService.UserLogin:output_type -> nightswatch.UserLoginResponse
+	2,  // 12: nightswatch.NightsWatchService.Login:output_type -> nightswatch.LoginResponse
 	10, // 13: nightswatch.NightsWatchService.SendDeviceData:output_type -> google.protobuf.Empty
 	9,  // 14: nightswatch.NightsWatchService.GetLatestData:output_type -> nightswatch.GetLatestDataResponse
 	11, // [11:15] is the sub-list for method output_type
