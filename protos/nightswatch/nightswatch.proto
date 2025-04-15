@@ -57,11 +57,12 @@ enum DeviceDataType {
   OSQUERY_VERSION = 3;
 }
 
+message App{
+  string name = 1;
+  string version = 2;
+}
+
 message InstalledApps{
-  message App{
-    string name = 1;
-    string version = 2;
-  }
   repeated App apps = 1;
 }
 
