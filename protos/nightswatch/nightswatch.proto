@@ -58,7 +58,7 @@ message DeviceDataRequest {
 
 // LatestDataRequest is the request for the LatestData method
 message GetLatestDataRequest {
-  repeated string user_name = 1;
+  string user_name = 1;
 }
 
 message GetLatestDataResponse {

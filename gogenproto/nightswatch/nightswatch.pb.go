@@ -420,7 +420,7 @@ func (x *DeviceDataRequest) GetOsqueryVersion() *OSQueryVersion {
 // LatestDataRequest is the request for the LatestData method
 type GetLatestDataRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	UserName      []string               `protobuf:"bytes,1,rep,name=user_name,json=userName,proto3" json:"user_name,omitempty"`
+	UserName      string                 `protobuf:"bytes,1,opt,name=user_name,json=userName,proto3" json:"user_name,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -455,11 +455,11 @@ func (*GetLatestDataRequest) Descriptor() ([]byte, []int) {
 	return file_protos_nightswatch_nightswatch_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *GetLatestDataRequest) GetUserName() []string {
+func (x *GetLatestDataRequest) GetUserName() string {
 	if x != nil {
 		return x.UserName
 	}
-	return nil
+	return ""
 }
 
 type GetLatestDataResponse struct {
@@ -550,7 +550,7 @@ const file_protos_nightswatch_nightswatch_proto_rawDesc = "" +
 	"os_version\x18\x02 \x01(\v2\x16.nightswatch.OSVersionR\tosVersion\x12D\n" +
 	"\x0fosquery_version\x18\x03 \x01(\v2\x1b.nightswatch.OSQueryVersionR\x0eosqueryVersion\"3\n" +
 	"\x14GetLatestDataRequest\x12\x1b\n" +
-	"\tuser_name\x18\x01 \x03(\tR\buserName\"\xd7\x01\n" +
+	"\tuser_name\x18\x01 \x01(\tR\buserName\"\xd7\x01\n" +
 	"\x15GetLatestDataResponse\x12A\n" +
 	"\x0einstalled_apps\x18\x01 \x01(\v2\x1a.nightswatch.InstalledAppsR\rinstalledApps\x125\n" +
 	"\n" +
