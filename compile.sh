@@ -9,6 +9,4 @@ protoc -I . \
   --go_opt=module=github.com/SoumyadipPayra/NightsWatchProtobufs \
   --go-grpc_out . \
   --go-grpc_opt=module=github.com/SoumyadipPayra/NightsWatchProtobufs \
-  --grpc-gateway_out . \
-  --grpc-gateway_opt=module=github.com/SoumyadipPayra/NightsWatchProtobufs \
   ./protos/**/*.proto

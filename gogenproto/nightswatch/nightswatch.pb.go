@@ -7,7 +7,6 @@
 package nightswatch
 
 import (
-	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	emptypb "google.golang.org/protobuf/types/known/emptypb"
@@ -559,7 +558,7 @@ var File_protos_nightswatch_nightswatch_proto protoreflect.FileDescriptor
 
 const file_protos_nightswatch_nightswatch_proto_rawDesc = "" +
 	"\n" +
-	"$protos/nightswatch/nightswatch.proto\x12\vnightswatch\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\"W\n" +
+	"$protos/nightswatch/nightswatch.proto\x12\vnightswatch\x1a\x1bgoogle/protobuf/empty.proto\"W\n" +
 	"\x0fRegisterRequest\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n" +
 	"\x05email\x18\x02 \x01(\tR\x05email\x12\x1a\n" +
@@ -595,12 +594,12 @@ const file_protos_nightswatch_nightswatch_proto_rawDesc = "" +
 	"\x0eINSTALLED_APPS\x10\x01\x12\x0e\n" +
 	"\n" +
 	"OS_VERSION\x10\x02\x12\x13\n" +
-	"\x0fOSQUERY_VERSION\x10\x032\xbc\x03\n" +
-	"\x12NightsWatchService\x12Y\n" +
-	"\bRegister\x12\x1c.nightswatch.RegisterRequest\x1a\x16.google.protobuf.Empty\"\x17\x82\xd3\xe4\x93\x02\x11:\x01*\"\f/v1/register\x12P\n" +
-	"\x05Login\x12\x19.nightswatch.LoginRequest\x1a\x16.google.protobuf.Empty\"\x14\x82\xd3\xe4\x93\x02\x0e:\x01*\"\t/v1/login\x12d\n" +
-	"\x0eSendDeviceData\x12\x1e.nightswatch.DeviceDataRequest\x1a\x16.google.protobuf.Empty\"\x1a\x82\xd3\xe4\x93\x02\x14:\x01*\"\x0f/v1/device/data\x12\x92\x01\n" +
-	"\rGetLatestData\x12!.nightswatch.GetLatestDataRequest\x1a\".nightswatch.GetLatestDataResponse\":\x82\xd3\xe4\x93\x024\x122/v1/device/data/{user_name}/{data_request_types=*}BGZEgithub.com/SoumyadipPayra/NightsWatchProtobufs/gogenproto/nightswatchb\x06proto3"
+	"\x0fOSQUERY_VERSION\x10\x032\xbc\x02\n" +
+	"\x12NightsWatchService\x12B\n" +
+	"\bRegister\x12\x1c.nightswatch.RegisterRequest\x1a\x16.google.protobuf.Empty\"\x00\x12<\n" +
+	"\x05Login\x12\x19.nightswatch.LoginRequest\x1a\x16.google.protobuf.Empty\"\x00\x12J\n" +
+	"\x0eSendDeviceData\x12\x1e.nightswatch.DeviceDataRequest\x1a\x16.google.protobuf.Empty\"\x00\x12X\n" +
+	"\rGetLatestData\x12!.nightswatch.GetLatestDataRequest\x1a\".nightswatch.GetLatestDataResponse\"\x00BGZEgithub.com/SoumyadipPayra/NightsWatchProtobufs/gogenproto/nightswatchb\x06proto3"
 
 var (
 	file_protos_nightswatch_nightswatch_proto_rawDescOnce sync.Once

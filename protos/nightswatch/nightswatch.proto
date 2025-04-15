@@ -3,37 +3,17 @@ syntax = "proto3";
 package nightswatch;
 
 import "google/protobuf/empty.proto";
-import "google/api/annotations.proto";
 option go_package = "github.com/SoumyadipPayra/NightsWatchProtobufs/gogenproto/nightswatch";
 
 service NightsWatchService {
   // Service methods will be defined here
-  rpc Register(RegisterRequest) returns (google.protobuf.Empty) {
-    option (google.api.http) = {
-      post: "/v1/register"
-      body: "*"
-    };
-  }
+  rpc Register(RegisterRequest) returns (google.protobuf.Empty) {}
 
-  rpc Login(LoginRequest) returns (google.protobuf.Empty) {
-    option (google.api.http) = {
-      post: "/v1/login"
-      body: "*"
-    };
-  }
+  rpc Login(LoginRequest) returns (google.protobuf.Empty) {}
 
-  rpc SendDeviceData(DeviceDataRequest) returns (google.protobuf.Empty) {
-    option (google.api.http) = {
-      post: "/v1/device/data"
-      body: "*"
-    };
-  }
+  rpc SendDeviceData(DeviceDataRequest) returns (google.protobuf.Empty) {}
 
-  rpc GetLatestData(GetLatestDataRequest) returns (GetLatestDataResponse) {
-    option (google.api.http) = {
-      get: "/v1/device/data/{user_name}/{data_request_types=*}"
-    };
-  }
+  rpc GetLatestData(GetLatestDataRequest) returns (GetLatestDataResponse) {}
 }
 
 // Message definitions will be added here
